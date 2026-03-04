@@ -29,6 +29,7 @@ const Button: React.FC<CustomButtonProps> = ({useBorder = true, label, imgSrc, s
         display: "flex",
         alignItems: "center",
         gap: "6px",
+        userSelect: "none",
 
         transition: "all 0.2s ease",
         color: "black",
@@ -36,8 +37,8 @@ const Button: React.FC<CustomButtonProps> = ({useBorder = true, label, imgSrc, s
         ...style,
       }}
     >
-      {imgSrc && <img src={imgSrc} alt="" style={{ width: 16, height: 16 }}/>}
-      {"   " + label}
+      {imgSrc && <img src={imgSrc} alt="" style={{ width: 16, height: 16, fill: "var(--primary)"}}/>}
+      {label}
     </button>
   );
 };

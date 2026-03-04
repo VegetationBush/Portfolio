@@ -1,19 +1,34 @@
-import { useState } from 'react'
-import './App.css'
-import Button from './components/Button'
-import Navbar from './components/Navbar'
-import git_brand from './assets/git_brand.svg'
+import './index.css'
+import Navbar from './sections/Navbar'
+import Intro from './sections/Intro'
+import InfoBar from './sections/InfoBar'
+import PerspectiveCard from './components/PerspectiveCard'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
+    <div style = {{
+      display: "flex",
+      height: "100vh",
+      width: "100vw",
+      flexDirection: "column",
+      backgroundColor: "var(--background)",
+      overflow: "hidden",
+    }}>
       <Navbar />
-      <div>
-        <Button style={{position: "relative", top: 50}} label="Github" imgSrc={git_brand}/>
+      <div style = {{
+        position: "relative",
+        flex: 1, 
+        display: "flex",
+        padding: 0,
+        margin: 0,
+        overflowY: "auto",
+        overflowX: "hidden",
+      }}>
+        <Intro/>
+        <InfoBar />
+        <PerspectiveCard title = "Hello"/>
       </div>
-    </>
+    </div>
   )
 }
 
