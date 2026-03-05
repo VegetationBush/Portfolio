@@ -9,11 +9,12 @@ interface PerspectiveCardProps {
 }
 
 const PERSPECTIVE_CARD_STRENGTH = 0.1
-const PerspectiveCard: React.FC<PerspectiveCardProps> = ({
+const PerspectiveCard: React.FC<PerspectiveCardProps & React.HTMLAttributes<HTMLDivElement>> = ({
   title = "",
   description = "",
   width = 350,
   height = 350,
+  style
 }) => {
   const cardRef = useRef<HTMLDivElement>(null);
 
@@ -56,12 +57,13 @@ const PerspectiveCard: React.FC<PerspectiveCardProps> = ({
         height,
         position: "absolute",
         perspective: "1500px",
+        ...style,
       }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
       <div className="interactive-card" ref={cardRef} style = {{position: "absolute", height: "350px", width: "350px", color: "white"}}>
-        <h2 style = {{backgroundColor: "black", height: "100%", borderRadius: 25, boxShadow: "5px 5px 25px 10px black"}}>{title + "lorem ipsum sor dit amet"}</h2>
+        <h2 style = {{backgroundColor: "white", height: "100%", borderRadius: 25, border: "var(--border)", boxShadow: "var(--shadow)"}}>{title + "lorem ipsum sor dit amet"}</h2>
         <p>{description}</p>
       </div>
     </div>

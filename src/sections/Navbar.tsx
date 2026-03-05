@@ -18,8 +18,8 @@ const Navbar = () => {
         justifyContent: "space-between",
         alignItems: "center",
         backgroundColor: "var(--background)",
-        borderBottom: "1px solid #e5e7eb",
-        boxShadow: "0 2px 6px rgba(0, 0, 0, 0.05)",
+        borderBottom: "var(--border)",
+        boxShadow: "var(--shadow)",
       }}
     >
       <div style={{position: "absolute", right: 90, justifyContent: "flex-end", display: "flex", gap: 8}}>

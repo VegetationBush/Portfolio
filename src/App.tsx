@@ -26,7 +26,10 @@ function App() {
       }}>
         <Intro/>
         <InfoBar />
-        <PerspectiveCard title = "Hello"/>
+        <PerspectiveCard title = "Hello" style = {{right: 140, top: 100}}/>
+        <PerspectiveCard title = "Hello" style = {{right: 160, top: 120}}/>
+        <PerspectiveCard title = "Hello" style = {{right: 180, top: 140}}/>
+        <PerspectiveCard title = "Hello" style = {{right: 200, top: 160}}/>
       </div>
     </div>
   )
