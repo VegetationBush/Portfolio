@@ -1,8 +1,9 @@
 import './index.css'
-import Navbar from './sections/Navbar'
-import Intro from './sections/Intro'
-import InfoBar from './sections/InfoBar'
+import Navbar from './components/Navbar'
+import Intro from './components/Intro'
+import InfoBar from './components/InfoBar'
 import PerspectiveCard from './components/PerspectiveCard'
+import ScrollTip from './components/ScrollTip'
 
 function App() {
   return (
@@ -13,24 +14,37 @@ function App() {
       flexDirection: "column",
       backgroundColor: "var(--background)",
       overflow: "hidden",
+      gap: 0,
     }}>
-      <Navbar />
+      <Navbar/>
       <div style = {{
         position: "relative",
-        flex: 1, 
         display: "flex",
         padding: 0,
         margin: 0,
+        flexDirection: "column",
         overflowY: "auto",
-        overflowX: "hidden",
+        scrollbarWidth: "none",
+
       }}>
-        <Intro/>
-        <InfoBar />
-        <PerspectiveCard title = "Hello" style = {{right: 140, top: 100}}/>
-        <PerspectiveCard title = "Hello" style = {{right: 160, top: 120}}/>
-        <PerspectiveCard title = "Hello" style = {{right: 180, top: 140}}/>
-        <PerspectiveCard title = "Hello" style = {{right: 200, top: 160}}/>
+        <div style = {{
+          position: "relative",
+          height: "calc(100dvh - var(--navbar-height))",
+          flexShrink: 0,
+        }}>
+          <Intro/>
+          <InfoBar />
+          <ScrollTip/>
+        </div>
+        <div style = {{
+          position: "relative",
+        }}>
+          <PerspectiveCard style = {{right: 140, top: 100}}>
+            
+          </PerspectiveCard>
+        </div>
       </div>
+      
     </div>
   )
 }

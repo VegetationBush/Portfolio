@@ -12,14 +12,17 @@ const InfoBar = () => {
         animationDelay: "1.75s",
         animationFillMode: "forwards",
 
+        top: 0,
+        right: 0,
+
         transform: "translate(100%, 0%) translateX(50px)",
-        position: "relative",
+        position: "absolute",
       }}
     >
       <style>
         {`@keyframes animateIn {
           0%   { transform: translate(100%, 0%) translateX(50px); }
-          100% { transform: translate(0%, 0%)  translateX(-50px); }
+          100% { transform: translate(0%, 0%) translateX(-100px); }
         }`}
       </style>
     </div>

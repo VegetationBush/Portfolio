@@ -6,15 +6,15 @@ interface PerspectiveCardProps {
   description?: string;
   width?: number;
   height?: number; // optional, default 400
+  children?: React.ReactNode;
 }
 
-const PERSPECTIVE_CARD_STRENGTH = 0.1
+const PERSPECTIVE_CARD_STRENGTH = 0.05
 const PerspectiveCard: React.FC<PerspectiveCardProps & React.HTMLAttributes<HTMLDivElement>> = ({
-  title = "",
-  description = "",
   width = 350,
   height = 350,
-  style
+  style,
+  children
 }) => {
   const cardRef = useRef<HTMLDivElement>(null);
 
@@ -24,21 +24,33 @@ const PerspectiveCard: React.FC<PerspectiveCardProps & React.HTMLAttributes<HTML
     // retrieving values
     const card = cardRef.current;
     const rect = card.getBoundingClientRect();
-    const mouseX = e.clientX - rect.left;
-    const mouseY = e.clientY - rect.top;
+    const mouseX = e.clientX;
+    const mouseY = e.clientY;
     const cardCenterX = rect.left + rect.width / 2;
     const cardCenterY = rect.top + rect.height / 2;
 
-    const angle = Math.atan2(mouseY - cardCenterY, mouseX - cardCenterX)
-    const percentX = Math.abs((mouseX - cardCenterX) / cardCenterX); // percent distance from the center and outer x bound
-    const percentY = Math.abs((mouseY - cardCenterY) / cardCenterY); // percent distance from the center and outer y bound
+    const angle = Math.atan2(mouseY - cardCenterY, mouseX - cardCenterX);
+    const percentX = Math.abs((mouseX - cardCenterX) / (card.offsetWidth / 2)); // percent distance from the center and outer x bound
+    const percentY = Math.abs((mouseY - cardCenterY) / (card.offsetHeight / 2)); // percent distance from the center and outer y bound
 
     // percentY is used on rotateX and vice versa since their axis rotates each other
     const rotateX = Math.sin(angle) * -PERSPECTIVE_CARD_STRENGTH * percentY;
     const rotateY = Math.cos(angle) * PERSPECTIVE_CARD_STRENGTH * percentX;
-    
     card.style.transform = `rotateX(${rotateX}rad) rotateY(${rotateY}rad)`;
     // card.style.boxShadow = `5px 5px 20px 20px black`;
+    
+    // Convert angle so 45deg = brightest, 225deg = darkest
+    const targetAngle = -Math.PI / 4; // 45deg in radians
+    let angleDiff = angle - targetAngle;
+
+    // Normalize angleDiff to -π → π
+    if (angleDiff > Math.PI) angleDiff -= 2 * Math.PI;
+    if (angleDiff < -Math.PI) angleDiff += 2 * Math.PI;
+
+    // Cosine mapping: 0 → darkest, 1 → brightest
+    const brightnessFactor = 0.05; // max deviation
+    const brightness = 1.05 + brightnessFactor * Math.cos(angleDiff); 
+    card.style.filter = `brightness(${brightness})`;
   };
 
   const handleMouseLeave = () => {
@@ -46,7 +58,7 @@ const PerspectiveCard: React.FC<PerspectiveCardProps & React.HTMLAttributes<HTML
 
     const card = cardRef.current;
     card.style.transform = 'rotateX(0deg) rotateY(0deg)';
-    // card.style.boxShadow = '5px 5px 20px 20px black';
+    card.style.filter = `brightness(1)`;
   };
 
   return (
@@ -63,8 +75,8 @@ const PerspectiveCard: React.FC<PerspectiveCardProps & React.HTMLAttributes<HTML
       onMouseLeave={handleMouseLeave}
     >
       <div className="interactive-card" ref={cardRef} style = {{position: "absolute", height: "350px", width: "350px", color: "white"}}>
-        <h2 style = {{backgroundColor: "white", height: "100%", borderRadius: 25, border: "var(--border)", boxShadow: "var(--shadow)"}}>{title + "lorem ipsum sor dit amet"}</h2>
-        <p>{description}</p>
+        <h2 style = {{backgroundColor: "black", height: "100%", borderRadius: 25, border: "var(--border)", boxShadow: "var(--shadow)"}}></h2>
+        {children}
       </div>
     </div>
   );

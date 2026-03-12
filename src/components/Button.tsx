@@ -1,12 +1,13 @@
 import React from "react";
+import IconSVG from "./IconSVG";
 import "../index.css"
 
 type ButtonSize = "small" | "medium" | "large";
 interface CustomButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   size?: ButtonSize;
   label?: string;
-  imgSrc?: string;
-  useBorder?: boolean;
+  svg?: string;
+  onClick?: () => void;
 }
 
 const sizeStyles = {
@@ -15,12 +16,12 @@ const sizeStyles = {
   large: { padding: "16px 20px", fontSize: "1.2rem" },
 };
 
-const Button: React.FC<CustomButtonProps> = ({useBorder = true, label, imgSrc, size = "small", style, ...props }) => {
+const Button: React.FC<CustomButtonProps> = ({onClick, label, svg, size = "small", style, ...props }) => {
   return (
     <button
       {...props}
+      onClick={onClick}
       style={{
-        border: useBorder && "1px solid #e5e7eb" || "",
         borderRadius: "12px",
         cursor: "pointer",
         outline: "none",
@@ -31,13 +32,12 @@ const Button: React.FC<CustomButtonProps> = ({useBorder = true, label, imgSrc, s
         gap: "6px",
         userSelect: "none",
 
-        transition: "all 0.2s ease",
-        color: "black",
+        color: "var(--primary)",
         ...sizeStyles[size],
         ...style,
       }}
     >
-      {imgSrc && <img src={imgSrc} alt="" style={{ width: 16, height: 16, fill: "var(--primary)"}}/>}
+      {svg && <IconSVG svg = {svg} color = "var(--primary)" width = {16} height = {16}/>}
       {label}
     </button>
   );
