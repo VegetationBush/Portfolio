@@ -2,8 +2,8 @@ import './index.css'
 import Navbar from './components/Navbar'
 import Intro from './components/Intro'
 import InfoBar from './components/InfoBar'
-import PerspectiveCard from './components/PerspectiveCard'
 import ScrollTip from './components/ScrollTip'
+import AboutMe from './sections/AboutMe'
 
 function App() {
   return (
@@ -36,13 +36,7 @@ function App() {
           <InfoBar />
           <ScrollTip/>
         </div>
-        <div style = {{
-          position: "relative",
-        }}>
-          <PerspectiveCard style = {{right: 140, top: 100}}>
-            
-          </PerspectiveCard>
-        </div>
+        <AboutMe/>
       </div>
       
     </div>
