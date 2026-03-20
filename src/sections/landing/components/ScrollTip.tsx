@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from "react";
-import '../index.css'
+import { useEffect, useRef } from "react";
+import '@/index.css'
 
 const ANIMATION_DELAY_MS = 3000;
 
@@ -39,6 +39,7 @@ const ScrollTip = () => {
 
         bottom: 10,
         left: "50%",
+        color: "var(--primary)",
 
         opacity: 0,
 

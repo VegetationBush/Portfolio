@@ -1,9 +1,7 @@
-import './index.css'
-import Navbar from './components/Navbar'
-import Intro from './components/Intro'
-import InfoBar from './components/InfoBar'
-import ScrollTip from './components/ScrollTip'
-import AboutMe from './sections/AboutMe'
+import '@/index.css'
+import Navbar from '@/components/Navbar'
+import AboutMe from '@/sections/AboutMe'
+import Landing from '@/sections/landing/Landing'
 
 function App() {
   return (
@@ -27,15 +25,7 @@ function App() {
         scrollbarWidth: "none",
 
       }}>
-        <div style = {{
-          position: "relative",
-          height: "calc(100dvh - var(--navbar-height))",
-          flexShrink: 0,
-        }}>
-          <Intro/>
-          <InfoBar />
-          <ScrollTip/>
-        </div>
+        <Landing/>
         <AboutMe/>
       </div>
       

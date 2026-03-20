@@ -4,32 +4,29 @@ import type { MouseEvent } from 'react';
 interface CardProps {
   title?: string;
   description?: string;
-  width?: number;
-  height?: number;
+  width?: string;
+  height?: string;
   children?: React.ReactNode;
 }
 
 const Card: React.FC<CardProps & React.HTMLAttributes<HTMLDivElement>> = ({
-  width = 350,
-  height = 350,
   style,
   children
 }) => {
   return (
     <div
-        style = {{
-          backgroundColor: "var(--background)",
-          width: width,
-          height: height,
-          borderRadius: 25,
-          border: "var(--border)",
-          boxShadow: "var(--shadow)",
-          padding: "15px",
-          color: "var(--primary)",
-          ...style
-        }}>
-        {children}
-      </div>
+      style = {{
+        backgroundColor: "var(--background)",
+        borderRadius: 25,
+        border: "var(--border)",
+        boxShadow: "var(--shadow)",
+        padding: "15px",
+        color: "var(--primary)",
+        ...style
+      }}
+    >
+      {children}
+    </div>
   );
 };
 

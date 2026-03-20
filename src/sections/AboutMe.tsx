@@ -1,5 +1,5 @@
-import '../index.css'
-import PerspectiveCard from '../components/PerspectiveCard'
+import '@/index.css'
+import PerspectiveCard from '@/components/PerspectiveCard'
 
 function AboutMe() {
   return (
@@ -17,6 +17,8 @@ function AboutMe() {
         style = {{
           left: 15,
           top: 50,
+          height: "250px",
+          width: "250px",
         }}
       >
         Hello

@@ -1,20 +1,21 @@
 import React, { useRef } from 'react';
-import Card from './Card';
 import type { MouseEvent } from 'react';
 
 interface PerspectiveCardProps {
   title?: string;
   description?: string;
-  width?: number;
-  height?: number;
+  width?: string;
+  height?: string;
   children?: React.ReactNode;
+  cardStyle?: React.CSSProperties,
 }
 
-const PERSPECTIVE_CARD_STRENGTH = 0.05
+const PERSPECTIVE_CARD_STRENGTH = 0.2
 const PerspectiveCard: React.FC<PerspectiveCardProps & React.HTMLAttributes<HTMLDivElement>> = ({
-  width = 350,
-  height = 350,
+  width,
+  height,
   style,
+  cardStyle,
   children
 }) => {
   const cardRef = useRef<HTMLDivElement>(null);
@@ -51,23 +52,33 @@ const PerspectiveCard: React.FC<PerspectiveCardProps & React.HTMLAttributes<HTML
     <div
       className="interactive-card-container"
       style={{
-        width,
-        height,
         position: "absolute",
         perspective: "1500px",
-        backgroundColor: "rgba(100, 0, 0, 0)",
-        ...style,
+        height: height,
+        
+        width: width,
+        ...style
       }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
-      <div ref = {cardRef} style = {{backgroundColor: "rgba(100, 0, 0, 0)"}}>
-        <Card
-          height = {height}
-          style = {style}
-        >
-          {children}
-        </Card>
+      <div
+        ref = {cardRef}
+        style = {{
+          transition: 'transform 0.2s ease-out',
+
+          backgroundColor: "var(--background)",
+          width: "100%",
+          height: "100%",
+          borderRadius: 25,
+          border: "var(--border)",
+          boxShadow: "var(--shadow)",
+          padding: "15px",
+          color: "var(--primary)",
+          ...cardStyle
+        }}
+      >
+        {children}
       </div>
     </div>
   );
