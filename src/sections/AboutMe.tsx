@@ -1,5 +1,6 @@
 import '@/index.css'
 import PerspectiveCard from '@/components/PerspectiveCard'
+import TestImage from '@/assets/TestImage.png'
 
 function AboutMe() {
   return (
@@ -21,7 +22,14 @@ function AboutMe() {
           width: "250px",
         }}
       >
-        Hello
+        <img
+          src = {TestImage}
+          style = {{
+            objectFit: "cover",
+            height: "100%",
+            width: "100%",
+          }}
+        />
       </PerspectiveCard>
     </div>
   )

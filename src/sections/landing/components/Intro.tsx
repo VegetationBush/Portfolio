@@ -6,6 +6,8 @@ const Intro = () => {
       style={{
         height: "100%",
         width: "100vw",
+        position: "absolute",
+        zIndex: 100,
       }}
     >
       <div

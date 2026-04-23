@@ -23,7 +23,6 @@ function App() {
         flexDirection: "column",
         overflowY: "auto",
         scrollbarWidth: "none",
-
       }}>
         <Landing/>
         <AboutMe/>

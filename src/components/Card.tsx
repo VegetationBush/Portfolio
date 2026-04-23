@@ -22,6 +22,8 @@ const Card: React.FC<CardProps & React.HTMLAttributes<HTMLDivElement>> = ({
         boxShadow: "var(--shadow)",
         padding: "15px",
         color: "var(--primary)",
+        overflow: "hidden",
+        contain: "paint",
         ...style
       }}
     >

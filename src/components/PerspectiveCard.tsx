@@ -10,7 +10,7 @@ interface PerspectiveCardProps {
   cardStyle?: React.CSSProperties,
 }
 
-const PERSPECTIVE_CARD_STRENGTH = 0.2
+const PERSPECTIVE_CARD_STRENGTH = 0.3
 const PerspectiveCard: React.FC<PerspectiveCardProps & React.HTMLAttributes<HTMLDivElement>> = ({
   width,
   height,
@@ -71,9 +71,9 @@ const PerspectiveCard: React.FC<PerspectiveCardProps & React.HTMLAttributes<HTML
           width: "100%",
           height: "100%",
           borderRadius: 25,
+          overflow: "hidden",
           border: "var(--border)",
           boxShadow: "var(--shadow)",
-          padding: "15px",
           color: "var(--primary)",
           ...cardStyle
         }}
