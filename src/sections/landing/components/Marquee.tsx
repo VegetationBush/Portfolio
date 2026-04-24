@@ -1,176 +1,68 @@
 import "@/index.css"
-import { useState, useEffect } from "react";
-import TestImage from '@/assets/TestImage.png'
-import Arcadient from '@/assets/Arcadient.png'
-import Biomass from '@/assets/Biomass.png'
-import PerspectiveCard from "@/components/PerspectiveCard";
+import React from "react";
 
 type MarqueeProps = {
-  
+  items: React.ReactElement[],
+  duration: number,
 }
 
-export default function Marquee() {
-  const [show, setShow] = useState(false);
+function shuffle<T>(array: T[]): T[] {
+  const arr = [...array]; // don’t mutate original
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShow(true);
-    }, 2000);
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
 
-    return () => clearTimeout(timer);
-  }, []);
+  return arr;
+}
 
-  if (!show) return null;
-
-  const items = [TestImage, Arcadient, Biomass, TestImage, Arcadient, Biomass]
+const Marquee: React.FC<MarqueeProps> = ({items, duration}) => {
+  const shuffledItems = shuffle(items)
+  const duplicatedItems = [...shuffledItems, ...shuffledItems].map((item, index) =>
+    React.cloneElement(item, {
+      key: `${item.key ?? "item"}-${index}`,
+    })
+  );
 
   return (
-    <div style={{
-      overflow: "hidden",
-      position: "absolute",
-      height: "100vh",
-      width: "65vw",
-      WebkitMaskImage: "linear-gradient(to right, transparent, black 20%, black 80%, transparent)",
-      right: "5vh",
-      padding: "150px",
-      opacity: "0.5",
-
-    }}>
-
-      <div style={{ transform: "rotate(-45deg)", position: "relative" }}>
-        <div
-          style={{
-            display: "flex",
-            width: "max-content",
-            animation: "scroll 10s linear infinite",
-          }}
-        >
-          {[...items, ...items].map((item, i) => (
-            <img
-              key={i}
-              src={item}
-              style={{
-                width: "150px",
-                height: "150px",
-                objectFit: "cover",
-                marginRight: "1rem",
-              }}
-            />
-          ))}
-        </div>
-        <style>{`
-          @keyframes scroll {
-            from {
-              transform: translateX(0);
-            }
-            to {
-              transform: translateX(-50%);
-            }
-          }
-        `}</style>
+    <div
+      style={{
+        position: "relative",
+        left: 0,
+        width: "max-content",
+        animation: `marquee-enter ${2 + duration / 5}s ease`,
+      }}
+    >
+      <div
+        style={{
+          position: "relative",
+          width: "max-content",
+          animation: `marquee-scroll ${duration}s linear infinite`,
+        }}
+      >
+        {duplicatedItems}
       </div>
-
-      <div style={{ transform: "rotate(-45deg)", position: "relative", top: "100px" }}>
-        <div
-          style={{
-            display: "flex",
-            width: "max-content",
-            animation: "scroll 15s linear infinite",
-          }}
-        >
-          {[...items, ...items].map((item, i) => (
-            <img
-              key={i}
-              src={item}
-              style={{
-                width: "150px",
-                height: "150px",
-                objectFit: "cover",
-                marginRight: "1rem",
-              }}
-            />
-          ))}
-        </div>
-        <style>{`
-          @keyframes scroll {
-            from {
-              transform: translateX(0);
-            }
-            to {
-              transform: translateX(-50%);
-            }
+      <style>{`
+        @keyframes marquee-scroll {
+          from {
+            transform: translateX(0%);
           }
-        `}</style>
-      </div>
-
-      <div style={{ transform: "rotate(-45deg)", position: "relative", top: "200px" }}>
-        <div
-          style={{
-            display: "flex",
-            width: "max-content",
-            animation: "scroll 20s linear infinite",
-          }}
-        >
-          {[...items, ...items].map((item, i) => (
-            <img
-              key={i}
-              src={item}
-              style={{
-                width: "150px",
-                height: "150px",
-                objectFit: "cover",
-                marginRight: "1rem",
-              }}
-            />
-          ))}
-        </div>
-        <style>{`
-          @keyframes scroll {
-            from {
-              transform: translateX(0);
-            }
-            to {
-              transform: translateX(-50%);
-            }
+          to {
+            transform: translateX(-50%);
           }
-        `}</style>
-      </div>
-
-      <div style={{ transform: "rotate(-45deg)", position: "relative", top: "300px" }}>
-        <div
-          style={{
-            display: "flex",
-            width: "max-content",
-            animation: "scroll 25s linear infinite",
-          }}
-        >
-          {[...items, ...items].map((item, i) => (
-            <PerspectiveCard style = {{width: "150px", height: "150px", position: "relative"}}>
-              <img
-                key={i}
-                src={item}
-                style={{
-                  width: "150px",
-                  height: "150px",
-                  objectFit: "cover",
-                  marginRight: "1rem",
-                }}
-              />
-            </PerspectiveCard>
-          ))}
-        </div>
-        <style>{`
-          @keyframes scroll {
-            from {
-              transform: translateX(0);
-            }
-            to {
-              transform: translateX(-50%);
-            }
+        }
+        @keyframes marquee-enter {
+          from {
+            transform: translateX(100%);
           }
-        `}</style>
-      </div>
-
+          to {
+            transform: translateX(0%);
+          }
+        }
+      `}</style>
     </div>
   );
 }
+
+export default Marquee

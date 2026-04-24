@@ -1,6 +1,6 @@
 import '@/index.css'
 import PerspectiveCard from '@/components/PerspectiveCard'
-import TestImage from '@/assets/TestImage.png'
+import TestImage from '@/assets/dark_light.svg'
 
 function AboutMe() {
   return (

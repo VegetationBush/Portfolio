@@ -1,7 +1,7 @@
 import "@/index.css"
 import Intro from "./components/Intro"
 import ScrollTip from "./components/ScrollTip"
-import Marquee from "./components/Marquee"
+import MarqueeArray from "./components/MarqueeArray"
 
 export default function Landing() {
   return <div
@@ -13,7 +13,7 @@ export default function Landing() {
     }
   }>
     <Intro/>
-    <Marquee/>
+    <MarqueeArray/>
     <ScrollTip/>
   </div>
 }

@@ -59,8 +59,8 @@ const PerspectiveCard: React.FC<PerspectiveCardProps & React.HTMLAttributes<HTML
         width: width,
         ...style
       }}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
+      onMouseMove = {handleMouseMove}
+      onMouseLeave = {handleMouseLeave}
     >
       <div
         ref = {cardRef}
