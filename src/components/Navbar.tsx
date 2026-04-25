@@ -7,10 +7,10 @@ import { useState, useEffect } from "react"
 
 const Navbar = () => {
 
-  const [dark, setDark] = useState<boolean>(false)
+  const [light, setLight] = useState<boolean>(false)
   useEffect(() => {
-    document.documentElement.classList.toggle("dark", dark)
-  }, [dark])
+    document.documentElement.classList.toggle("light", light)
+  }, [light])
 
   return (
     <nav
@@ -40,7 +40,7 @@ const Navbar = () => {
         <Button
           label="Toggle Mode"
           svg={dark_light}
-          onClick={() => setDark(d => !d)}
+          onClick={() => setLight(d => !d)}
         />
         <Separator/>
         <Button

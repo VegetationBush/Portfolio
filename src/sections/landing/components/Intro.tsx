@@ -5,7 +5,7 @@ const Intro = () => {
     <div
       style={{
         height: "100%",
-        width: "100vw",
+        width: "100%",
         position: "absolute",
         zIndex: 100,
       }}
@@ -69,7 +69,7 @@ const Intro = () => {
         }`}
         {`@keyframes introMoveSubtitleLeft {
           0%   { transform: translate(-50%, -50%) translateY(35px); }
-          100% { transform: translate(0%, -50%) translateY(35px); left: 100px}
+          100% { transform: translate(2%, -50%) translateY(35px); left: 100px}
         }`}
       </style>
     </div>

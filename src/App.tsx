@@ -15,19 +15,20 @@ function App() {
       gap: 0,
     }}>
       <Navbar/>
-      <div style = {{
-        position: "relative",
-        display: "flex",
-        padding: 0,
-        margin: 0,
-        flexDirection: "column",
-        overflowY: "auto",
-        scrollbarWidth: "none",
-      }}>
-        <Landing/>
-        <AboutMe/>
-      </div>
-      
+
+        <div style = {{
+          position: "relative",
+          display: "flex",
+          width: "100vw",
+          maxWidth: "1500px",
+          flexDirection: "column",
+          margin: "0 auto",
+          overflowY: "auto",
+          scrollbarWidth: "none",
+        }}>
+          <Landing/>
+          <AboutMe/>
+        </div>
     </div>
   )
 }

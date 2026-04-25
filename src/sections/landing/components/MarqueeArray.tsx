@@ -37,7 +37,6 @@ const MarqueeArray = () => {
 
   if (!show) return null;
   
-  console.log(itemList)
   return (
     <div style = {{
       position: "relative",
@@ -48,10 +47,11 @@ const MarqueeArray = () => {
       <div style={{
         position: "absolute",
         height: "100%",
-        width: "70%",
+        width: "75%",
         WebkitMaskImage: "linear-gradient(to right, transparent, black 20%, black 80%, transparent)",
         right: 0,
-        opacity: "0.5",
+        animation: "marquee-array-fade 5s ease-in forwards",
+        opacity: "0.75",
       }}>
         {
           Array.from({ length: 5 }, (_, i) => (
@@ -65,6 +65,12 @@ const MarqueeArray = () => {
         }
         
       </div>
+      <style>
+        {`@keyframes marquee-array-fade {
+          0%   { opacity: 1 }
+          100% { opacity: 0.27 }
+        }`}
+      </style>
     </div>
     
   )

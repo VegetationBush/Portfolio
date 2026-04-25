@@ -9,6 +9,7 @@ export default function Landing() {
     style = {{
       position: "relative",
       height: "calc(100vh - var(--navbar-height))",
+      maxHeight: "100vh",
       flexShrink: 0,
     }
   }>
