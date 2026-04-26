@@ -28,7 +28,8 @@ const Intro = () => {
           `,
           animationDelay: "0s, 2s",
           animationFillMode: "forwards",
-        }}>
+        }}
+      >
         Hi, I'm Hans.
       </div>
       <div
@@ -51,7 +52,7 @@ const Intro = () => {
           animationDelay: "0.65s, 2s",
           animationFillMode: "forwards",
         }}>
-        Welcome to my portfolio!
+        Thanks for checking in!
       </div>
 
       <style>
@@ -65,11 +66,11 @@ const Intro = () => {
         }`}
         {`@keyframes introMoveTitleLeft {
           0%   { transform: translate(-50%, -50%) translateY(-40px); }
-          100% { transform: translate(0%, -50%) translateY(-40px); left: 100px}
+          100% { transform: translate(0%, -50%) translateY(-40px); left: 0px}
         }`}
         {`@keyframes introMoveSubtitleLeft {
           0%   { transform: translate(-50%, -50%) translateY(35px); }
-          100% { transform: translate(2%, -50%) translateY(35px); left: 100px}
+          100% { transform: translate(2%, -50%) translateY(35px); left: 0px}
         }`}
       </style>
     </div>

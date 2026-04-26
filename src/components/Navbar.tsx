@@ -16,13 +16,12 @@ const Navbar = () => {
     <nav
       style={{
         position: "relative",
-        top: 0,
-        left: 0,
         width: "100%",
         height: "var(--navbar-height)",
         zIndex: 100,
         
         display: "flex",
+        flexGrow: 0,
         justifyContent: "space-between",
         alignItems: "center",
         backgroundColor: "var(--background)",
@@ -32,20 +31,20 @@ const Navbar = () => {
     >
       <div style={{position: "absolute", right: 90, justifyContent: "flex-end", display: "flex", gap: 8}}>
         <Button
-          label="Github"
-          svg={git_brand}
-          onClick={() => window.open("https://github.com/VegetationBush", "_blank")}
+          label = "Github"
+          svg = {git_brand}
+          onClick = {() => window.open("https://github.com/VegetationBush", "_blank")}
         />
         <Separator/>
         <Button
-          label="Toggle Mode"
-          svg={dark_light}
-          onClick={() => setLight(d => !d)}
+          label = "Toggle Mode"
+          svg = {dark_light}
+          onClick = {() => setLight(d => !d)}
         />
         <Separator/>
         <Button
           label="Github"
-          svg={git_brand}
+          svg = {git_brand}
         />
       </div>
 

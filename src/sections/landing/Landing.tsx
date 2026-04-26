@@ -8,9 +8,7 @@ export default function Landing() {
     id = "Landing"
     style = {{
       position: "relative",
-      height: "calc(100vh - var(--navbar-height))",
-      maxHeight: "100vh",
-      flexShrink: 0,
+      height: "100%",
     }
   }>
     <Intro/>
