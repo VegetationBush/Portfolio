@@ -1,5 +1,5 @@
 import "@/index.css"
-import { useState, useEffect, type ReactNode, type ReactElement } from "react";
+import { useState, useEffect, type ReactElement } from "react";
 import Marquee from "./Marquee";
 
 const images = import.meta.glob<string>('/src/sections/landing/components/marqueeImages/*.{png,jpg,jpeg}', {

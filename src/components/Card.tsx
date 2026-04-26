@@ -1,5 +1,4 @@
-import React, { useRef } from 'react';
-import type { MouseEvent } from 'react';
+import React from 'react';
 
 interface CardProps {
   title?: string;
