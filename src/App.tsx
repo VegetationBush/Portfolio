@@ -36,6 +36,7 @@ function App() {
       <Navbar/>
       <div
         ref = {scrollRef}
+        className = "page-padding-container"
         style = {{
           position: "relative",
           width: "100vw",
@@ -44,8 +45,6 @@ function App() {
           margin: "0 auto",
           overflowY: "auto",
           overflowX: "hidden",
-          paddingLeft: "5rem",
-          paddingRight: "5rem",
           scrollbarWidth: "none",
           flex: 1,
         }}

@@ -1,4 +1,5 @@
 import "@/components/Button.tsx"
+import "./intro.css"
 
 const Intro = () => {
   return (

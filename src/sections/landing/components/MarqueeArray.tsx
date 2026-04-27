@@ -39,18 +39,18 @@ const MarqueeArray = () => {
   
   return (
     <div
-      style={{
+      className = "intro-marquee-array"
+      style = {{
         position: "absolute",
         right: 0,
         height: "100%",
-        width: "75%",
 
         WebkitMaskImage: "linear-gradient(to right, transparent, black 35%, black 65%, transparent)",
         overflow: "hidden",
         animation: "marquee-array-fade 5s ease-in forwards",
       }}
     >
-      <div style={{
+      <div style = {{
         height: "100%",
         width: "100%",
 

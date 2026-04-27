@@ -9,7 +9,7 @@ export default function Landing() {
       style = {{
         position: "relative",
         height: "var(--content-height)",
-        maxHeight: "65rem",
+        maxHeight: "75rem",
       }}
     >
       <Intro/>

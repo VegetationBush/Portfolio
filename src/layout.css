@@ -9,6 +9,12 @@
 .split-item-right {
   flex: var(--right, 1);
 }
+
+.page-padding-container {
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+
 @media (max-width: 768px) {
   .split-container {
     flex-direction: column;
@@ -17,5 +23,9 @@
     width: 100%;
     min-width: 0rem;
   }
-}
 
+  .page-padding-container {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}

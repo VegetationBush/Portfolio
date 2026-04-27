@@ -1,0 +1,9 @@
+.intro-marquee-array {
+  width: 75%;
+}
+
+@media (max-width: 768px) {
+  .intro-marquee-array {
+    width: 100%;
+  }
+}
