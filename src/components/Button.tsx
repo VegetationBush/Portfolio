@@ -11,9 +11,9 @@ interface CustomButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement
 }
 
 const sizeStyles = {
-  small: { padding: "8px 10px", fontSize: "0.8rem" },
-  medium: { padding: "12px 15px", fontSize: "1rem" },
-  large: { padding: "16px 20px", fontSize: "1.2rem" },
+  small: { padding: "0.5rem 0.75rem", fontSize: "0.8rem" },
+  medium: { padding: "0.75rem 1rem", fontSize: "1rem" },
+  large: { padding: "1rem 1.25rem", fontSize: "1.2rem" },
 };
 
 const Button: React.FC<CustomButtonProps> = ({onClick, label, svg, size = "small", style, ...props }) => {
@@ -31,6 +31,7 @@ const Button: React.FC<CustomButtonProps> = ({onClick, label, svg, size = "small
         alignItems: "center",
         gap: "0.5rem",
         userSelect: "none",
+        textWrap: "nowrap",
 
         color: "var(--primary)",
         ...sizeStyles[size],
