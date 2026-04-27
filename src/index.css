@@ -1,66 +1,56 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  user-select: none;
+  margin: 0;
+  padding: 0;
+}
+
 :root {
   font-family: 'Geist', sans-serif;
   line-height: 1.5;
-  margin: 0;
-  padding: 0;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  /* theme */
-  background-color: oklch(0.12 0 0);
-
-  --background: oklch(0.12 0 0);
-  --background-hover: oklch(0.2 0 0);
-  --primary: oklch(0.95 0 0);
-  --secondary: oklch(0.8 0 0);
-  --muted-foreground: oklch(0.5 0 0);
-  --accent: oklch(55% 0.2434 266.905);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.97 0.01 17);
-  --shadow: 0 0px 6px 0px rgba(255, 255, 255, 0.05);
-  --border: 1px solid #2a2d31;
-
   --navbar-height: 3.5rem;
 }
 
-:root.light {
-  background-color: oklch(1 0 0);
-
-  --background: oklch(1 0 0);
-  --background-hover: oklch(0.94 0 0);
-  --primary: oklch(0.205 0 0);
-  --secondary: oklch(0.35 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(45.622% 0.2434 266.905);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.97 0.01 17);
-  --shadow: 0 0px 6px 0px rgba(0, 0, 0, 0.05);
-  --border: 1px solid #e5e7eb;
+html {
+  line-height: 1.5;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
-* {
-  /*transition every property that gets affected by theme*/
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease,
-    border-color 0.3s ease,
-    box-shadow 0.3s ease;
-  user-select: none;
+body {
+  min-height: 100vh;
 }
 
-.container {
-  min-height: 100vh;   /* At least the height of the viewport */
-  display: flex;
-  justify-content: center;  /* horizontal centering */
-  align-items: center;      /* vertical centering */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
 }
 
-html, body {
-  margin: 0;
-  padding: 0;
+input, button, textarea, select {
+  font: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
 }
 
 h1 {
@@ -80,8 +70,14 @@ p {
   color: var(--secondary);
 }
 
-h1, h2, h3, h4, h5, h6, p {
-  margin: 0;
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+#root, #__next {
+  isolation: isolate;
 }
 
 button {

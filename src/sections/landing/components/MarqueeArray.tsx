@@ -1,4 +1,3 @@
-import "@/index.css"
 import { useState, useEffect, type ReactElement } from "react";
 import Marquee from "./Marquee";
 
@@ -14,8 +13,8 @@ const listToElements = (list: string[]): ReactElement[] => {
       key={i}
       src={item}
       style={{
-        width: "150px",
-        height: "150px",
+        width: "10rem",
+        height: "10rem",
         objectFit: "cover",
         marginRight: "1rem",
         borderRadius: "1.5rem",
@@ -30,7 +29,7 @@ const MarqueeArray = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShow(true);
-    }, 1000);
+    }, 750);
 
     return () => clearTimeout(timer);
   }, []);
@@ -38,32 +37,33 @@ const MarqueeArray = () => {
   if (!show) return null;
   
   return (
-    <div style = {{
-      position: "relative",
-      width: "100%",
-      height: "100%",
-      overflow: "hidden",
-    }}>
-      <div style={{
+    <div
+      style={{
         position: "absolute",
+        right: 0,
         height: "100%",
         width: "75%",
-        WebkitMaskImage: "linear-gradient(to right, transparent, black 20%, black 80%, transparent)",
-        right: 0,
+
+        WebkitMaskImage: "linear-gradient(to right, transparent, black 35%, black 65%, transparent)",
         animation: "marquee-array-fade 5s ease-in forwards",
-        opacity: "0.75",
+      }}
+    >
+      <div style={{
+        height: "100%",
+        width: "100%",
+
+        display: "flex",
+        flexDirection: "column",
+        gap: "1rem",
+        
+        transform: "rotate(-35deg)",
+        transformOrigin: "center",
       }}>
         {
           Array.from({ length: 5 }, (_, i) => (
-            <div
-              key = {i}
-              style = {{ transform: "rotate(-35deg)", position: "relative", right: 150, top: `${i * 50}px` }}
-            >
-              <Marquee items = {listToElements(itemList)} duration = {10 + i * 3}/>
-            </div>
+            <Marquee items = {listToElements(itemList)} duration = {10 + i * 3}/>
           ))
         }
-        
       </div>
       <style>
         {`@keyframes marquee-array-fade {
@@ -72,7 +72,6 @@ const MarqueeArray = () => {
         }`}
       </style>
     </div>
-    
   )
 }
 

@@ -1,4 +1,3 @@
-import "@/index.css"
 import React from "react";
 
 type MarqueeProps = {
@@ -38,6 +37,7 @@ const Marquee: React.FC<MarqueeProps> = ({items, duration}) => {
         style={{
           position: "relative",
           width: "max-content",
+          display: "flex",
           animation: `marquee-scroll ${duration}s linear infinite`,
         }}
       >

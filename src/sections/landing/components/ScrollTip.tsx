@@ -1,5 +1,4 @@
 import { useEffect, useRef } from "react";
-import '@/index.css'
 
 const ANIMATION_DELAY_MS = 3000;
 
@@ -30,8 +29,8 @@ const ScrollTip = () => {
     <div
       ref={containerRef}
       style={{
-        height: "20px",
-        width: "100px",
+        height: "2rem",
+        width: "7rem",
 
         animation: "scrollTipFadeIn 0.5s ease-in-out",
         animationDelay: ANIMATION_DELAY_MS + "ms",
@@ -52,12 +51,12 @@ const ScrollTip = () => {
       Scroll down
       <style>
         {`@keyframes scrollTipFadeIn {
-          0%   { transform: translate(-50%, -25px); opacity: 0; }
+          0%   { transform: translate(-50%, -2rem); opacity: 0; }
           100% { transform: translate(-50%, 0px); opacity: 1; }
         }`}
         {`@keyframes scrollTipFadeOut {
           0%   { transform: translate(-50%, 0px); opacity: 1; }
-          100% { transform: translate(-50%, 25px); opacity: 0; }
+          100% { transform: translate(-50%, 2rem); opacity: 0; }
         }`}
       </style>
     </div>

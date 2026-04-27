@@ -1,37 +1,51 @@
-import '@/index.css'
+import "./aboutMe.css"
 
 import PerspectiveCard from '@/components/PerspectiveCard'
 import MusicImage from "./images/Music.png"
 import CodeImage from "./images/Code.png"
 
+import { useState } from "react"
+
 import { useFadeInOnScroll } from '@/util/fadeInOnScroll'
 
 function AboutMe() {
   const { ref, isVisible } = useFadeInOnScroll();
-
+  const items: ({title: string, description: string})[] = [{title: "a", description: "b"}, {title: "c", description: "d"}, {title: "c", description: "d"}, {title: "c", description: "d"}]
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  
   return (
     <div
       ref={ref}
+      className = "split-container"
       style = {{
         position: "relative",
         height: "100%",
         opacity: isVisible ? 1 : 0,
         transform: isVisible ? "translateX(0px)" : "translateX(4rem)",
         transition: "all 0.3s ease-out",
+        flexWrap: "wrap",
         display: "flex",
-    }}>
+        justifyContent: "center",
+        flexDirection: "row",
+        padding: "5rem 0",
+        gap: "3rem",
+        "--left": "4",
+        "--right": "4",
+      } as React.CSSProperties}
+    >
 
       {/* Text section */}
-      <div style = {{
-        position: "relative",
-        width: "45%",
-        maxWidth: "800px",
-        minWidth: "300px",
-        padding: "5rem 0",
-        display: "flex",
-        flexDirection: "column",
-        rowGap: "20px",
-      }}>
+      <div
+        className = "split-item-left"
+        style = {{
+          position: "relative",
+          minWidth: "400px",
+          maxWidth: "500px",
+          display: "flex",
+          flexDirection: "column",
+          rowGap: "1.25rem",
+        }}
+      >
         <h2>About Me</h2>
         <p style = {{
           position: "relative",
@@ -46,8 +60,43 @@ function AboutMe() {
           composition. I have since explored and developed various skills across multiple disciplines, including digital arts, game
           development, design, and software development.
         </p>
+
+        {/* Timeline */}
+        <div style = {{
+          position: "relative",
+          flex: 1,
+          backgroundColor: "gray"
+        }}>
+          <div style={{ display: "flex", width: "100%", padding: "5px", gap: "5px", justifyContent: "space-between" }}>
+            {items.map((item, index) => (
+              <div
+                key={index}
+                style={{ position: "relative", textAlign: "center", backgroundColor: "orange", height: "1rem", width: "1rem" }}
+                onMouseEnter={() => setHoveredIndex(index)}
+                onMouseLeave={() => setHoveredIndex(null)}
+              >
+                {/* node */}
+                <div>
+                  <button type="button">●</button>
+                </div>
+
+                {/* connector (optional placeholder) */}
+                {index !== items.length - 1 && <div>----</div>}
+
+                {/* tooltip */}
+                {hoveredIndex === index && (
+                  <div style={{ position: "absolute", top: "100%" }}>
+                    <div>{item.title}</div>
+                    <div>{item.description}</div>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+
+
         <p style = {{
-          marginTop: "14rem",
           position: "relative",
         }}>
           I am grateful for the opportunity to catch this dream when I was still young. It has shaped how I think and grow, in ways that would
@@ -56,14 +105,23 @@ function AboutMe() {
         </p>
       </div>
 
-      <div style = {{}}>
+      {/* Image ssection */}
+      <div
+        className = "split-item-right"
+        style = {{
+          position: "relative",
+          minWidth: "500px",
+          height: "100%",
+          maxHeight: "45rem",
+          overflow: "hidden",
+        }}
+      >
         <PerspectiveCard
           style = {{
             position: "absolute",
-            height: "25rem",
-            width: "25rem",
-            right: "0",
-            top: "5rem",
+            width: "70%",
+            minWidth: "25rem",
+            aspectRatio: 1,
           }}
         >
           <img src = {MusicImage} />
@@ -71,10 +129,11 @@ function AboutMe() {
         <PerspectiveCard
           style = {{
             position: "absolute",
-            height: "25rem",
-            width: "25rem",
-            right: "10rem",
-            top: "20rem",
+            width: "70%",
+            minWidth: "25rem",
+            bottom: 0,
+            right: 0,
+            aspectRatio: 1,
           }}
         >
           <img src = {CodeImage} />

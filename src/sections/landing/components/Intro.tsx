@@ -23,8 +23,8 @@ const Intro = () => {
           top: "50%",
 
           animation: `
-            introMoveTitle 0.85s ease-out,
-            introMoveTitleLeft 1.5s ease-in-out
+            introMoveTitle 0.8s ease-out,
+            introMoveTitleLeft 1.25s ease-in-out
           `,
           animationDelay: "0s, 2s",
           animationFillMode: "forwards",
@@ -46,10 +46,10 @@ const Intro = () => {
           top: "50%",
 
           animation: `
-            introMoveSubtitle 0.85s ease-out,
-            introMoveSubtitleLeft 1.5s ease-in-out
+            introMoveSubtitle 0.8s ease-out,
+            introMoveSubtitleLeft 1.25s ease-in-out
           `,
-          animationDelay: "0.65s, 2s",
+          animationDelay: "1s, 2s",
           animationFillMode: "forwards",
         }}>
         Thanks for checking in!
@@ -57,20 +57,20 @@ const Intro = () => {
 
       <style>
         {`@keyframes introMoveTitle {
-          0%   { transform: translate(-50%, -50%) translateY(10px); opacity: 0 }
-          100% { transform: translate(-50%, -50%) translateY(-40px); opacity: 1 }
+          0%   { transform: translate(-50%, -50%) translateY(0.75rem); opacity: 0 }
+          100% { transform: translate(-50%, -50%) translateY(-3rem); opacity: 1 }
         }`}
         {`@keyframes introMoveSubtitle {
-          0%   { transform: translate(-50%, -50%) translateY(55px); opacity: 0 }
-          100% { transform: translate(-50%, -50%) translateY(35px); opacity: 1 }
+          0%   { transform: translate(-50%, -50%) translateY(3.5rem); opacity: 0 }
+          100% { transform: translate(-50%, -50%) translateY(1.5rem); opacity: 1 }
         }`}
         {`@keyframes introMoveTitleLeft {
-          0%   { transform: translate(-50%, -50%) translateY(-40px); }
-          100% { transform: translate(0%, -50%) translateY(-40px); left: 0px}
+          0%   { transform: translate(-50%, -50%) translateY(-3rem); }
+          100% { transform: translate(0%, -50%) translateY(-3rem); left: 0px}
         }`}
         {`@keyframes introMoveSubtitleLeft {
-          0%   { transform: translate(-50%, -50%) translateY(35px); }
-          100% { transform: translate(2%, -50%) translateY(35px); left: 0px}
+          0%   { transform: translate(-50%, -50%) translateY(1.5rem); }
+          100% { transform: translate(2%, -50%) translateY(1.5rem); left: 0px}
         }`}
       </style>
     </div>

@@ -1,0 +1,38 @@
+:root {
+  background-color: oklch(0.12 0 0);
+
+  --background: oklch(0.12 0 0);
+  --background-hover: oklch(0.2 0 0);
+  --primary: oklch(0.95 0 0);
+  --secondary: oklch(0.8 0 0);
+  --muted-foreground: oklch(0.5 0 0);
+  --accent: oklch(55% 0.2434 266.905);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.97 0.01 17);
+  --shadow: 0 0px 6px 0px rgba(255, 255, 255, 0.05);
+  --border: 1px solid #2a2d31;
+}
+
+:root.light {
+  background-color: oklch(1 0 0);
+
+  --background: oklch(1 0 0);
+  --background-hover: oklch(0.94 0 0);
+  --primary: oklch(0.205 0 0);
+  --secondary: oklch(0.35 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(45.622% 0.2434 266.905);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.97 0.01 17);
+  --shadow: 0 0px 6px 0px rgba(0, 0, 0, 0.05);
+  --border: 1px solid #e5e7eb;
+}
+
+* {
+  /* transition every property that gets affected by theme */
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
