@@ -42,6 +42,7 @@ function App() {
           flexDirection: "column",
           margin: "0 auto",
           overflowY: "auto",
+          overflowX: "hidden",
           boxSizing: "border-box",
           paddingLeft: "5rem",
           paddingRight: "5rem",

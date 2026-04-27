@@ -1,8 +1,8 @@
 interface IconProps {
   svg: string,
   color?: string,
-  width?: number,
-  height?: number,
+  width?: string,
+  height?: string,
   style?: React.CSSProperties,
 }
 

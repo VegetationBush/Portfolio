@@ -22,14 +22,14 @@ const Button: React.FC<CustomButtonProps> = ({onClick, label, svg, size = "small
       {...props}
       onClick={onClick}
       style={{
-        borderRadius: "12px",
+        borderRadius: "0.75rem",
         cursor: "pointer",
         outline: "none",
         fontWeight: 600,
 
         display: "flex",
         alignItems: "center",
-        gap: "6px",
+        gap: "0.5rem",
         userSelect: "none",
 
         color: "var(--primary)",
@@ -37,7 +37,7 @@ const Button: React.FC<CustomButtonProps> = ({onClick, label, svg, size = "small
         ...style,
       }}
     >
-      {svg && <IconSVG svg = {svg} color = "var(--primary)" width = {16} height = {16}/>}
+      {svg && <IconSVG svg = {svg} color = "var(--primary)" width = {"1rem"} height = {"1rem"}/>}
       {label}
     </button>
   );
