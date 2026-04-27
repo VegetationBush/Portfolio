@@ -1,5 +1,6 @@
 import "@/index.css"
 import "@/theme.css"
+import "@/layout.css"
 import Navbar from "@/components/Navbar"
 import AboutMe from "@/sections/aboutMe/AboutMe"
 import Landing from "@/sections/landing/Landing"

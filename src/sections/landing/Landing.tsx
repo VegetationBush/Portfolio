@@ -4,20 +4,17 @@ import MarqueeArray from "./components/MarqueeArray"
 
 export default function Landing() {
   return (
-    <div style = {{
-      position: "relative",
-      height: "100%",
-      }}
-    >
-      <div style = {{
+    <div
+    className = "section"
+      style = {{
         position: "relative",
         height: "100%",
-        maxHeight: "60rem",
-      }}>
-        <Intro/>
-        <MarqueeArray/>
-        <ScrollTip/>
-      </div>
+        maxHeight: "65rem",
+      }}
+    >
+      <Intro/>
+      <MarqueeArray/>
+      <ScrollTip/>
     </div>
   )
 }

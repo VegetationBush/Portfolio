@@ -1,5 +1,3 @@
-import "./aboutMe.css"
-
 import PerspectiveCard from '@/components/PerspectiveCard'
 import MusicImage from "./images/Music.png"
 import CodeImage from "./images/Code.png"
@@ -10,22 +8,19 @@ import { useFadeInOnScroll } from '@/util/fadeInOnScroll'
 
 function AboutMe() {
   const { ref, isVisible } = useFadeInOnScroll();
-  const items: ({title: string, description: string})[] = [
-    {title: "a", description: "b"},
-    {title: "c", description: "d"},
-    {title: "c", description: "d"},
-    {title: "c", description: "d"},
-    {title: "a", description: "b"},
-    {title: "c", description: "d"},
-    {title: "c", description: "d"},
-    {title: "c", description: "d"},
+  const items: ({year: string, description: string})[] = [
+    {year: "2018", description: "Composed my first peice of music."},
+    {year: "2019", description: "Began my game development journey and wrote my first line of real code."},
+    {year: "2020", description: "Began experimenting with various software (UE, MuseScore, Blender, Audacity, etc.). Completed my very first paid commision."},
+    {year: "2021", description: "Released my first successful software product."},
+    {year: "2022", description: "Launched a multiplayer experience with measurable traction and concurrent users."},
   ]
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   
   return (
     <div
       ref={ref}
-      className = "split-container"
+      className = "split-container section"
       style = {{
         position: "relative",
         height: "100%",
@@ -69,7 +64,7 @@ function AboutMe() {
         <p style = {{
           position: "relative",
         }}>
-          The spark began way back in elementary school. I quickly found myself immersed with creation, beginning my career with music
+          It began during elementary school; I quickly found myself immersed in the world of creation, beginning my career with music
           composition. I have since explored and developed various skills across multiple disciplines, including digital arts, game
           development, design, and software development.
         </p>
@@ -81,7 +76,7 @@ function AboutMe() {
           maxHeight: "12rem",
           flex: 1,
 
-          padding: "1rem",
+          padding: "1rem 0rem",
         }}>
           <div style = {{
             width: "100%",
@@ -91,7 +86,7 @@ function AboutMe() {
             <div style = {{
               display: "flex",
               width: "100%",
-              justifyContent: "space-between"
+              justifyContent: "space-around"
             }}>
               <div style = {{
                 position: "absolute",
@@ -100,6 +95,7 @@ function AboutMe() {
                 top: "50%",
                 translate: "0% -50%",
                 backgroundColor: "var(--accent)",
+                WebkitMaskImage: "linear-gradient(to right, transparent, black 25%, black 75%, transparent)",
               }}/>
               {items.map((item, index) => (
                 <div
@@ -120,7 +116,7 @@ function AboutMe() {
                   {/* tooltip */}
                   {hoveredIndex === index && (
                     <div style={{ position: "absolute", top: "100%" }}>
-                      <div>{item.title}</div>
+                      <div>{item.year}</div>
                       <div>{item.description}</div>
                     </div>
                   )}

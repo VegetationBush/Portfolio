@@ -1,22 +1,23 @@
+.section {
+    max-height: 65rem;
+}
+
+/* split container */
 .split-container {
   display: flex;
 }
-
 .split-item-left {
   flex: var(--flex, 1);
 }
-
 .split-item-right {
   flex: var(--flex, 1);
 }
-
-/* Mobile layout */
 @media (max-width: 768px) {
   .split-container {
     flex-direction: column;
   }
-
   .split-item-left, .split-item-right {
     width: 100%;
   }
 }
+

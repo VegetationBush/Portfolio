@@ -7,14 +7,15 @@ const images = import.meta.glob<string>('/src/sections/landing/components/marque
 });
 const itemList = Object.values(images);
 
+const ELEMENT_SIZE_REM = 11
 const listToElements = (list: string[]): ReactElement[] => {
   return list.map((item, i) => {
     return <img
       key={i}
       src={item}
       style={{
-        width: "10rem",
-        height: "10rem",
+        width: `${ELEMENT_SIZE_REM}rem`,
+        height: `${ELEMENT_SIZE_REM}rem`,
         objectFit: "cover",
         marginRight: "1rem",
         borderRadius: "1.5rem",
@@ -29,7 +30,7 @@ const MarqueeArray = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShow(true);
-    }, 750);
+    }, 650);
 
     return () => clearTimeout(timer);
   }, []);
@@ -45,6 +46,7 @@ const MarqueeArray = () => {
         width: "75%",
 
         WebkitMaskImage: "linear-gradient(to right, transparent, black 35%, black 65%, transparent)",
+        overflow: "hidden",
         animation: "marquee-array-fade 5s ease-in forwards",
       }}
     >
@@ -57,11 +59,18 @@ const MarqueeArray = () => {
         gap: "1rem",
         
         transform: "rotate(-35deg)",
-        transformOrigin: "center",
+        transformOrigin: "top left",
       }}>
         {
-          Array.from({ length: 5 }, (_, i) => (
-            <Marquee items = {listToElements(itemList)} duration = {10 + i * 3}/>
+          Array.from({ length: 7 }, (_, i) => (
+            <div style = {{
+              position: "relative",
+
+              // since the container is rotated 35 degrees from the top left, each element must be adjusted so aligns vertically, leaving no gaps
+              right: `${ELEMENT_SIZE_REM * (i + 1)}rem`,
+            }}>
+              <Marquee items = {listToElements(itemList)} duration = {10 + i * 3}/>
+            </div>
           ))
         }
       </div>
