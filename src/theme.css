@@ -1,6 +1,4 @@
 :root {
-  background-color: oklch(0.12 0 0);
-
   --background: oklch(0.12 0 0);
   --background-hover: oklch(0.2 0 0);
   --primary: oklch(0.95 0 0);
@@ -11,11 +9,12 @@
   --destructive-foreground: oklch(0.97 0.01 17);
   --shadow: 0 0px 6px 0px rgba(255, 255, 255, 0.05);
   --border: 1px solid #2a2d31;
+
+  background-color: var(--background);
+  color: var(--primary);
 }
 
 :root.light {
-  background-color: oklch(1 0 0);
-
   --background: oklch(1 0 0);
   --background-hover: oklch(0.94 0 0);
   --primary: oklch(0.205 0 0);
@@ -26,6 +25,10 @@
   --destructive-foreground: oklch(0.97 0.01 17);
   --shadow: 0 0px 6px 0px rgba(0, 0, 0, 0.05);
   --border: 1px solid #e5e7eb;
+
+  
+  background-color: var(--background);
+  color: var(--primary);
 }
 
 * {

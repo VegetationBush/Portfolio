@@ -27,6 +27,7 @@ function App() {
       display: "flex",
       height: "100vh",
       width: "100vw",
+      minHeight: "25rem",
       flexDirection: "column",
       backgroundColor: "var(--background)",
       overflow: "hidden",

@@ -10,7 +10,16 @@ import { useFadeInOnScroll } from '@/util/fadeInOnScroll'
 
 function AboutMe() {
   const { ref, isVisible } = useFadeInOnScroll();
-  const items: ({title: string, description: string})[] = [{title: "a", description: "b"}, {title: "c", description: "d"}, {title: "c", description: "d"}, {title: "c", description: "d"}]
+  const items: ({title: string, description: string})[] = [
+    {title: "a", description: "b"},
+    {title: "c", description: "d"},
+    {title: "c", description: "d"},
+    {title: "c", description: "d"},
+    {title: "a", description: "b"},
+    {title: "c", description: "d"},
+    {title: "c", description: "d"},
+    {title: "c", description: "d"},
+  ]
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   
   return (
@@ -20,15 +29,18 @@ function AboutMe() {
       style = {{
         position: "relative",
         height: "100%",
-        opacity: isVisible ? 1 : 0,
         transform: isVisible ? "translateX(0px)" : "translateX(4rem)",
         transition: "all 0.3s ease-out",
+        
         flexWrap: "wrap",
         display: "flex",
         justifyContent: "center",
         flexDirection: "row",
-        padding: "5rem 0",
-        gap: "3rem",
+        padding: "6.5rem 0",
+        gap: "6.5rem",
+        
+        opacity: isVisible ? 1 : 0,
+
         "--left": "4",
         "--right": "4",
       } as React.CSSProperties}
@@ -39,8 +51,9 @@ function AboutMe() {
         className = "split-item-left"
         style = {{
           position: "relative",
-          minWidth: "400px",
-          maxWidth: "500px",
+          minWidth: "25rem",
+          maxWidth: "32rem",
+          
           display: "flex",
           flexDirection: "column",
           rowGap: "1.25rem",
@@ -64,34 +77,56 @@ function AboutMe() {
         {/* Timeline */}
         <div style = {{
           position: "relative",
+          minHeight: "8rem",
+          maxHeight: "12rem",
           flex: 1,
-          backgroundColor: "gray"
+
+          padding: "1rem",
         }}>
-          <div style={{ display: "flex", width: "100%", padding: "5px", gap: "5px", justifyContent: "space-between" }}>
-            {items.map((item, index) => (
-              <div
-                key={index}
-                style={{ position: "relative", textAlign: "center", backgroundColor: "orange", height: "1rem", width: "1rem" }}
-                onMouseEnter={() => setHoveredIndex(index)}
-                onMouseLeave={() => setHoveredIndex(null)}
-              >
-                {/* node */}
-                <div>
-                  <button type="button">●</button>
+          <div style = {{
+            width: "100%",
+            position: "relative",
+            height: "1rem",
+          }}>
+            <div style = {{
+              display: "flex",
+              width: "100%",
+              justifyContent: "space-between"
+            }}>
+              <div style = {{
+                position: "absolute",
+                width: "100%",
+                height: "0.2rem",
+                top: "50%",
+                translate: "0% -50%",
+                backgroundColor: "var(--accent)",
+              }}/>
+              {items.map((item, index) => (
+                <div
+                  key = {index}
+                  style = {{
+                    position: "relative",
+                    textAlign: "center",
+                    height: "1rem",
+                    width: "1rem",
+                    backgroundColor: "var(--background)",
+                    borderRadius: "100%",
+                    border: "0.2rem solid var(--primary)",
+                  }}
+                  onMouseEnter = {() => setHoveredIndex(index)}
+                  onMouseLeave = {() => setHoveredIndex(null)}
+                >
+
+                  {/* tooltip */}
+                  {hoveredIndex === index && (
+                    <div style={{ position: "absolute", top: "100%" }}>
+                      <div>{item.title}</div>
+                      <div>{item.description}</div>
+                    </div>
+                  )}
                 </div>
-
-                {/* connector (optional placeholder) */}
-                {index !== items.length - 1 && <div>----</div>}
-
-                {/* tooltip */}
-                {hoveredIndex === index && (
-                  <div style={{ position: "absolute", top: "100%" }}>
-                    <div>{item.title}</div>
-                    <div>{item.description}</div>
-                  </div>
-                )}
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
 
@@ -105,12 +140,13 @@ function AboutMe() {
         </p>
       </div>
 
-      {/* Image ssection */}
+      {/* Image section */}
       <div
         className = "split-item-right"
         style = {{
           position: "relative",
-          minWidth: "500px",
+          maxWidth: "40rem",
+          minWidth: "20rem",
           height: "100%",
           maxHeight: "45rem",
           overflow: "hidden",
@@ -119,8 +155,11 @@ function AboutMe() {
         <PerspectiveCard
           style = {{
             position: "absolute",
+            left: 0,
+            top: 0,
             width: "70%",
-            minWidth: "25rem",
+            height: "auto",
+            minWidth: "20rem",
             aspectRatio: 1,
           }}
         >
@@ -130,7 +169,8 @@ function AboutMe() {
           style = {{
             position: "absolute",
             width: "70%",
-            minWidth: "25rem",
+            height: "auto",
+            minWidth: "20rem",
             bottom: 0,
             right: 0,
             aspectRatio: 1,
