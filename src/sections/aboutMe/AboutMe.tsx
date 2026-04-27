@@ -39,6 +39,7 @@ function AboutMe() {
         
         opacity: isVisible ? 1 : 0,
 
+        "--wrap-length": 40,
         "--left": 5,
         "--right": 4,
       } as React.CSSProperties}

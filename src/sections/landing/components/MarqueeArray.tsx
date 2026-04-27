@@ -30,7 +30,7 @@ const MarqueeArray = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShow(true);
-    }, 650);
+    }, 1500);
 
     return () => clearTimeout(timer);
   }, []);

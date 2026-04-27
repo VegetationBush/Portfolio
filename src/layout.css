@@ -14,6 +14,7 @@
   }
   .split-item-left, .split-item-right {
     width: 100%;
+    min-width: 0px;
   }
 }
 

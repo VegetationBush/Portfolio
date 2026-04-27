@@ -30,7 +30,7 @@ const Marquee: React.FC<MarqueeProps> = ({items, duration}) => {
         position: "relative",
         left: 0,
         width: "max-content",
-        animation: `marquee-enter ${2 + duration / 5}s ease`,
+        animation: `marquee-enter ${1.5 + duration / 10}s ease-out`,
       }}
     >
       <div
@@ -54,7 +54,7 @@ const Marquee: React.FC<MarqueeProps> = ({items, duration}) => {
         }
         @keyframes marquee-enter {
           from {
-            transform: translateX(100%);
+            transform: translateX(50%);
           }
           to {
             transform: translateX(0%);

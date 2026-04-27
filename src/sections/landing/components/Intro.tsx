@@ -24,7 +24,7 @@ const Intro = () => {
 
           animation: `
             introMoveTitle 0.8s ease-out,
-            introMoveTitleLeft 1.25s ease-in-out
+            introMoveTitleLeft 2s ease-in-out
           `,
           animationDelay: "0s, 2s",
           animationFillMode: "forwards",
@@ -47,7 +47,7 @@ const Intro = () => {
 
           animation: `
             introMoveSubtitle 0.8s ease-out,
-            introMoveSubtitleLeft 1.25s ease-in-out
+            introMoveSubtitleLeft 2s ease-in-out
           `,
           animationDelay: "1s, 2s",
           animationFillMode: "forwards",
