@@ -29,11 +29,8 @@ function AboutMe() {
         transform: isVisible ? "translateX(0px)" : "translateX(4rem)",
         transition: "all 0.3s ease-out",
         
-        flexWrap: "wrap",
-        display: "flex",
         alignContent: "center",
         justifyContent: "center",
-        flexDirection: "row",
         padding: "5rem 0",
         gap: "3.5rem",
         
@@ -50,7 +47,7 @@ function AboutMe() {
         className = "split-item-left"
         style = {{
           position: "relative",
-          minWidth: "30rem",
+          // minWidth: "30rem",
           
           display: "flex",
           flexDirection: "column",
@@ -158,7 +155,7 @@ function AboutMe() {
         className = "split-item-right"
         style = {{
           position: "relative",
-          minWidth: "30rem",
+          // minWidth: "30rem",
           overflow: "hidden",
           display: "grid",
           gridTemplate: "repeat(2, 1fr) / repeat(2, 1fr)",
