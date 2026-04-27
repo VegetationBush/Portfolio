@@ -1,22 +1,13 @@
 import React, { useRef } from 'react';
 import type { MouseEvent } from 'react';
-
-interface PerspectiveCardProps {
-  title?: string;
-  description?: string;
-  width?: string;
-  height?: string;
-  children?: React.ReactNode;
-  cardStyle?: React.CSSProperties,
-}
+import Card from './Card';
+import type {CardProps} from './Card';
 
 const PERSPECTIVE_CARD_STRENGTH = 0.3
-const PerspectiveCard: React.FC<PerspectiveCardProps & React.HTMLAttributes<HTMLDivElement>> = ({
-  width,
-  height,
+const PerspectiveCard: React.FC<CardProps> = ({
+  children,
   style,
-  cardStyle,
-  children
+  ...props
 }) => {
   const cardRef = useRef<HTMLDivElement>(null);
 
@@ -39,6 +30,7 @@ const PerspectiveCard: React.FC<PerspectiveCardProps & React.HTMLAttributes<HTML
     const rotateX = Math.sin(angle) * -PERSPECTIVE_CARD_STRENGTH * percentY;
     const rotateY = Math.cos(angle) * PERSPECTIVE_CARD_STRENGTH * percentX;
     card.style.transform = `rotateX(${rotateX}rad) rotateY(${rotateY}rad)`;
+    console.log(rotateX, rotateY)
   };
 
   const handleMouseLeave = () => {
@@ -50,36 +42,15 @@ const PerspectiveCard: React.FC<PerspectiveCardProps & React.HTMLAttributes<HTML
 
   return (
     <div
-      className="interactive-card-container"
-      style={{
-        position: "absolute",
+      style = {{
         perspective: "1500px",
-        height: height,
-        
-        width: width,
-        ...style
       }}
       onMouseMove = {handleMouseMove}
       onMouseLeave = {handleMouseLeave}
     >
-      <div
-        ref = {cardRef}
-        style = {{
-          transition: 'transform 0.2s ease-out',
-
-          backgroundColor: "var(--background)",
-          width: "100%",
-          height: "100%",
-          borderRadius: 25,
-          overflow: "hidden",
-          border: "var(--border)",
-          boxShadow: "var(--shadow)",
-          color: "var(--primary)",
-          ...cardStyle
-        }}
-      >
+      <Card ref = {cardRef} {...props} style = {{...style, transition: "transform 0.2s ease-out"}}>
         {children}
-      </div>
+      </Card>
     </div>
   );
 };

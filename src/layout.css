@@ -1,16 +1,12 @@
-.section {
-    max-height: 65rem;
-}
-
 /* split container */
 .split-container {
   display: flex;
 }
 .split-item-left {
-  flex: var(--flex, 1);
+  flex: var(--left, 1);
 }
 .split-item-right {
-  flex: var(--flex, 1);
+  flex: var(--right, 1);
 }
 @media (max-width: 768px) {
   .split-container {

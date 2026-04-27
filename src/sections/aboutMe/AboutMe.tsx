@@ -1,6 +1,7 @@
 import PerspectiveCard from '@/components/PerspectiveCard'
 import MusicImage from "./images/Music.png"
 import CodeImage from "./images/Code.png"
+import Card from '@/components/Card'
 
 import { useState } from "react"
 
@@ -15,29 +16,31 @@ function AboutMe() {
     {year: "2021", description: "Released my first successful software product."},
     {year: "2022", description: "Launched a multiplayer experience with measurable traction and concurrent users."},
   ]
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const imageItems: string[] = [MusicImage, CodeImage, MusicImage, CodeImage]
+  const [hoveredIndex, setHoveredIndex] = useState<number>(0);
   
   return (
     <div
       ref={ref}
-      className = "split-container section"
+      className = "split-container"
       style = {{
         position: "relative",
-        height: "100%",
+        minHeight: "var(--content-height)",
         transform: isVisible ? "translateX(0px)" : "translateX(4rem)",
         transition: "all 0.3s ease-out",
         
         flexWrap: "wrap",
         display: "flex",
+        alignContent: "center",
         justifyContent: "center",
         flexDirection: "row",
-        padding: "6.5rem 0",
-        gap: "6.5rem",
+        padding: "5rem 0",
+        gap: "3.5rem",
         
         opacity: isVisible ? 1 : 0,
 
-        "--left": "4",
-        "--right": "4",
+        "--left": 5,
+        "--right": 4,
       } as React.CSSProperties}
     >
 
@@ -46,12 +49,11 @@ function AboutMe() {
         className = "split-item-left"
         style = {{
           position: "relative",
-          minWidth: "25rem",
-          maxWidth: "32rem",
+          minWidth: "30rem",
           
           display: "flex",
           flexDirection: "column",
-          rowGap: "1.25rem",
+          rowGap: "1.5rem",
         }}
       >
         <h2>About Me</h2>
@@ -64,20 +66,28 @@ function AboutMe() {
         <p style = {{
           position: "relative",
         }}>
-          It began during elementary school; I quickly found myself immersed in the world of creation, beginning my career with music
-          composition. I have since explored and developed various skills across multiple disciplines, including digital arts, game
-          development, design, and software development.
+          When I was still in elementary school, I quickly found myself immersed in the world of creation, startng my career with music
+          composition. I have since explored and developed various skills across multiple disciplines, from digital arts and game
+          development, to design and software development.
         </p>
 
         {/* Timeline */}
-        <div style = {{
+        <Card style = {{
           position: "relative",
-          minHeight: "8rem",
+          minHeight: "10rem",
           maxHeight: "12rem",
+          marginInline: "-1rem",
+          marginTop: "2rem",
+          marginBottom: "2rem",
           flex: 1,
 
-          padding: "1rem 0rem",
+          display: "flex",
+          flexDirection: "column",
+          padding: "1rem",
+          gap: "1rem",
         }}>
+
+          {/* line */}
           <div style = {{
             width: "100%",
             position: "relative",
@@ -97,7 +107,7 @@ function AboutMe() {
                 backgroundColor: "var(--accent)",
                 WebkitMaskImage: "linear-gradient(to right, transparent, black 25%, black 75%, transparent)",
               }}/>
-              {items.map((item, index) => (
+              {items.map((_, index) => (
                 <div
                   key = {index}
                   style = {{
@@ -107,24 +117,30 @@ function AboutMe() {
                     width: "1rem",
                     backgroundColor: "var(--background)",
                     borderRadius: "100%",
-                    border: "0.2rem solid var(--primary)",
+                    border: "0.225rem solid var(--primary)",
                   }}
                   onMouseEnter = {() => setHoveredIndex(index)}
-                  onMouseLeave = {() => setHoveredIndex(null)}
                 >
-
-                  {/* tooltip */}
-                  {hoveredIndex === index && (
-                    <div style={{ position: "absolute", top: "100%" }}>
-                      <div>{item.year}</div>
-                      <div>{item.description}</div>
-                    </div>
-                  )}
                 </div>
               ))}
             </div>
           </div>
-        </div>
+
+          {/* info */}
+          {hoveredIndex != null && (
+            <div style = {{
+              position: "relative",
+              flex: 1,
+              padding: "0rem 1rem",
+              width: "100%",
+            }}>
+              <div style = {{
+                fontWeight: "600",
+              }}>{items[hoveredIndex].year}</div>
+              <div>{items[hoveredIndex].description}</div>
+            </div>
+          )}
+        </Card>
 
 
         <p style = {{
@@ -141,39 +157,25 @@ function AboutMe() {
         className = "split-item-right"
         style = {{
           position: "relative",
-          maxWidth: "40rem",
-          minWidth: "20rem",
-          height: "100%",
-          maxHeight: "45rem",
+          minWidth: "30rem",
           overflow: "hidden",
+          display: "grid",
+          gridTemplate: "repeat(2, 1fr) / repeat(2, 1fr)",
+          gap: "1rem",
         }}
       >
-        <PerspectiveCard
-          style = {{
-            position: "absolute",
-            left: 0,
-            top: 0,
-            width: "70%",
-            height: "auto",
-            minWidth: "20rem",
-            aspectRatio: 1,
-          }}
-        >
-          <img src = {MusicImage} />
-        </PerspectiveCard>
-        <PerspectiveCard
-          style = {{
-            position: "absolute",
-            width: "70%",
-            height: "auto",
-            minWidth: "20rem",
-            bottom: 0,
-            right: 0,
-            aspectRatio: 1,
-          }}
-        >
-          <img src = {CodeImage} />
-        </PerspectiveCard>
+        {imageItems.map((imgsrc) => {
+          return (<PerspectiveCard
+            style = {{
+              position: "relative",
+              padding: 0,
+              width: "100%",
+              height: "100%",
+            }}
+          >
+            <img style = {{width: "100%", height: "100%"}} src = {imgsrc}/>
+          </PerspectiveCard>)
+        })}
       </div>
       
       

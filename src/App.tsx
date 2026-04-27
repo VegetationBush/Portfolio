@@ -62,6 +62,7 @@ function App() {
       }} />
         <Landing/>
         <AboutMe/>
+        <AboutMe/>
       </div>
     </div>
   )

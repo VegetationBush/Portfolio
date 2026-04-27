@@ -63,12 +63,15 @@ const MarqueeArray = () => {
       }}>
         {
           Array.from({ length: 7 }, (_, i) => (
-            <div style = {{
-              position: "relative",
+            <div
+              key = {i}
+              style = {{
+                position: "relative",
 
-              // since the container is rotated 35 degrees from the top left, each element must be adjusted so aligns vertically, leaving no gaps
-              right: `${ELEMENT_SIZE_REM * (i + 1)}rem`,
-            }}>
+                // since the container is rotated 35 degrees from the top left, each element must be adjusted so aligns vertically, leaving no gaps
+                right: `${ELEMENT_SIZE_REM * (i + 1)}rem`,
+              }}
+            >
               <Marquee items = {listToElements(itemList)} duration = {10 + i * 3}/>
             </div>
           ))

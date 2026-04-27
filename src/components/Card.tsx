@@ -1,34 +1,32 @@
-import React from 'react';
+import React from "react";
 
-interface CardProps {
-  title?: string;
-  description?: string;
-  width?: string;
-  height?: string;
+export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode;
 }
 
-const Card: React.FC<CardProps & React.HTMLAttributes<HTMLDivElement>> = ({
-  style,
-  children
-}) => {
-  return (
-    <div
-      style = {{
-        backgroundColor: "var(--background)",
-        borderRadius: 25,
-        border: "var(--border)",
-        boxShadow: "var(--shadow)",
-        padding: "15px",
-        color: "var(--primary)",
-        overflow: "hidden",
-        contain: "paint",
-        ...style
-      }}
-    >
-      {children}
-    </div>
-  );
-};
+const Card = React.forwardRef<HTMLDivElement, CardProps>(
+  ({ children, style, ...props }, ref) => {
+    return (
+      <div
+        ref={ref}
+        {...props}
+        style={{
+          backgroundColor: "var(--background)",
+          borderRadius: "2rem",
+          border: "var(--border)",
+          boxShadow: "var(--shadow-out), var(--shadow-in)",
+          padding: "15px",
+          color: "var(--primary)",
+          overflow: "hidden",
+          ...style,
+        }}
+      >
+        {children}
+      </div>
+    );
+  }
+);
+
+Card.displayName = "Card";
 
 export default Card;

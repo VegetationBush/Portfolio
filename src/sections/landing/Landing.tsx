@@ -5,10 +5,10 @@ import MarqueeArray from "./components/MarqueeArray"
 export default function Landing() {
   return (
     <div
-    className = "section"
+      className = "section"
       style = {{
         position: "relative",
-        height: "100%",
+        height: "var(--content-height)",
         maxHeight: "65rem",
       }}
     >

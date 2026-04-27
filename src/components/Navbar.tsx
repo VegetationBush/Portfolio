@@ -26,7 +26,7 @@ const Navbar = () => {
         alignItems: "center",
         backgroundColor: "var(--background)",
         borderBottom: "var(--border)",
-        boxShadow: "var(--shadow)",
+        boxShadow: "var(--shadow-out)",
       }}
     >
       <div style={{position: "absolute", right: 90, justifyContent: "flex-end", display: "flex", gap: 8}}>
