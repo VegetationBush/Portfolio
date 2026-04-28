@@ -4,6 +4,7 @@ import "@/layout.css"
 import Navbar from "@/components/Navbar"
 import AboutMe from "@/sections/aboutMe/AboutMe"
 import Landing from "@/sections/landing/Landing"
+import Skillset from "@/sections/skillset/Skillset"
 
 import { useEffect, useRef } from "react"
 
@@ -51,7 +52,7 @@ function App() {
       >
         <Landing/>
         <AboutMe/>
-        <AboutMe/>
+        <Skillset/>
       </div>
     </div>
   )

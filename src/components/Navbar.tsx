@@ -1,8 +1,9 @@
 import "./navbar.css"
 import Button from './Button';
 import Separator from './Separator';
-import git_brand from '../assets/git_brand.svg?raw'
-import dark_light from '../assets/dark_light.svg?raw'
+import git_brand from '@/assets/brandIcons/git.svg?raw'
+import dark_light from '@/assets/dark-light.svg?raw'
+import file_icon from '@/assets/file-icon.svg?raw'
 import { useState, useEffect } from "react"
 
 const Navbar = () => {
@@ -50,8 +51,8 @@ const Navbar = () => {
         />
         <Separator/>
         <Button
-          label="Github"
-          svg = {git_brand}
+          label = "Resume"
+          svg = {file_icon}
         />
       </div>
 

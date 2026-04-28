@@ -40,8 +40,12 @@ const Button: React.FC<CustomButtonProps> = ({onClick, label, svg, size = "small
         ...style,
       }}
     >
-      <span>{svg && <IconSVG svg = {svg} color = "var(--primary)" width = {"1rem"} height = {"1rem"}/>}</span>
-      <span className = {collapsible ? "button-collapsable-label" : ""}>{label}</span>
+      <span>
+        {svg && <IconSVG svg = {svg} color = "var(--primary)" width = {"1.1rem"} height = {"1.1rem"}/>}
+      </span>
+      <span className = { collapsible ? "button-collapsable-label" : "" }>
+        {label}
+      </span>
     </button>
   );
 };

@@ -9,6 +9,7 @@
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.97 0.01 17);
   --shadow: 0 0 0.75rem 0 oklch(1 0 0 / 0.015);
+  --shadow-inner: inset 0 0.05rem 0.05rem 0 oklch(1 0 0 / 0.1);
   --border: 1px solid oklch(0.225 0 0);
 
   background-color: var(--background);
@@ -26,6 +27,7 @@
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.97 0.01 17);
   --shadow: 0 0 0.75rem 0 oklch(0 0 0 / 0.035);
+  --shadow-inner: inset 0 0.05rem 0.05rem 0 oklch(0 0 0 / 0.1);
   --border: 1px solid oklch(0.925 0 0);
 
   background-color: var(--background);

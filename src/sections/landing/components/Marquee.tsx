@@ -1,6 +1,6 @@
 import React from "react";
 
-type MarqueeProps = {
+interface MarqueeProps {
   items: React.ReactElement[],
   duration: number,
 }

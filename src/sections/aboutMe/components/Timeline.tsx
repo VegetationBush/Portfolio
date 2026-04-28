@@ -7,7 +7,7 @@ const timelineItems: ({year: string, description: string})[] = [
   {year: "2020", description: "Began experimenting with various software. Completed my very first paid commision."},
   {year: "2021", description: "Released my first successful software product."},
   {year: "2022", description: "Launched a multiplayer experience with measurable traction and concurrent users."},
-  {year: "... to the present!", description: "A lot of progress has been made! Go to the showcase section to see more."},
+  {year: "... to the present!", description: "Check out the showcase section to see what I've been doing!"},
 ]
 
 const Timeline = () => {
