@@ -1,44 +1,76 @@
 import { useFadeInOnScroll } from "@/util/fadeInOnScroll"
 import SkillCard from "./components/SkillCard";
-import git_brand from "@/assets/brandIcons/git.svg?raw"
 
-const languageSkills: ({ svg: string, label: string })[] = [
-  { svg: git_brand, label: "HTML" },
-  { svg: git_brand, label: "CSS" },
-  { svg: git_brand, label: "Go" },
-  { svg: git_brand, label: "Java" },
-  { svg: git_brand, label: "Javascript" },
-  { svg: git_brand, label: "Kotlin" },
-  { svg: git_brand, label: "LaTeX" },
-  { svg: git_brand, label: "Lua" },
-  { svg: git_brand, label: "Luau" },
-  { svg: git_brand, label: "Love2D" },
-  { svg: git_brand, label: "Markdown" },
-  { svg: git_brand, label: "MATLAB" },
-  { svg: git_brand, label: "Notation" },
-  { svg: git_brand, label: "Python" },
-  { svg: git_brand, label: "R" },
-  { svg: git_brand, label: "SQL" },
-  { svg: git_brand, label: "Typescript" },
+import git_brand from "@/assets/github-icon.svg?raw"
+
+import html_icon from "./languageImages/html.svg?raw"
+import css_icon from "./languageImages/css.svg?raw"
+import java from "./languageImages/java.svg?raw"
+import javascript from "./languageImages/javascript.svg?raw"
+import latex from "./languageImages/latex.svg?raw"
+import latex_light from "./languageImages/latex-light.svg?raw"
+import lua from "./languageImages/lua.svg?raw"
+import luau from "./languageImages/luau.svg?raw"
+import love2d from "./languageImages/love2d.svg?raw"
+import markdown from "./languageImages/markdown.svg?raw"
+import markdown_light from "./languageImages/markdown-light.svg?raw"
+import matlab from "./languageImages/matlab.svg?raw"
+import python from "./languageImages/python.svg?raw"
+import r from "./languageImages/r.svg?raw"
+import typescript from "./languageImages/typescript.svg?raw"
+
+const languageSkills: ({ svg: string, svg_light?: string, label: string })[] = [
+  { svg: html_icon, label: "HTML" },
+  { svg: css_icon, label: "CSS" },
+  { svg: java, label: "Java" },
+  { svg: javascript, label: "JavaScript" },
+  { svg: latex, svg_light: latex_light, label: "LaTeX" },
+  { svg: lua, label: "Lua" },
+  { svg: luau, label: "Luau" },
+  { svg: love2d, label: "Love2D" },
+  { svg: markdown, svg_light: markdown_light, label: "Markdown", },
+  { svg: matlab, label: "MATLAB" },
+  { svg: python, label: "Python" },
+  { svg: r, label: "R" },
+  { svg: typescript, label: "Typescript" },
 ]
 
-const softwareTechSkills: ({ svg: string, label: string })[] = [
-  { svg: git_brand, label: "AdobeXD" },
-  { svg: git_brand, label: "Audacity" },
-  { svg: git_brand, label: "Blender" },
-  { svg: git_brand, label: "Canva" },
-  { svg: git_brand, label: "Excel" },
-  { svg: git_brand, label: "Git" },
-  { svg: git_brand, label: "Github" },
-  { svg: git_brand, label: "Krita" },
-  { svg: git_brand, label: "MuseScore Studio" },
-  { svg: git_brand, label: "Overleaf" },
-  { svg: git_brand, label: "paint.net" },
-  { svg: git_brand, label: "React" },
-  { svg: git_brand, label: "Roblox Studio" },
-  { svg: git_brand, label: "Vercel" },
-  { svg: git_brand, label: "Vite" },
-  { svg: git_brand, label: "VS Code" },
+import adobexd from "./techImages/adobexd.svg?raw"
+import audacity from "./techImages/audacity.svg?raw"
+import blender from "./techImages/blender.svg?raw"
+import canva from "./techImages/canva.svg?raw"
+import excel from "./techImages/excel.svg?raw"
+import git from "./techImages/git.svg?raw"
+import github from "./techImages/github.svg?raw"
+import github_light from "./techImages/github-light.svg?raw"
+import krita from "./techImages/krita.svg?raw"
+import musescore from "./techImages/musescore.svg?raw"
+import overleaf from "./techImages/overleaf.svg?raw"
+import paintdotnet from "./techImages/paintdotnet.svg?raw"
+import react from "./techImages/react.svg?raw"
+import roblox_studio from "./techImages/robloxstudio.svg?raw"
+import vercel from "./techImages/vercel.svg?raw"
+import vercel_light from "./techImages/vercel-light.svg?raw"
+import vite from "./techImages/vite.svg?raw"
+import vscode from "./techImages/vscode.svg?raw"
+
+const softwareTechSkills: ({ svg: string, svg_light?: string, label: string })[] = [
+  { svg: adobexd, label: "AdobeXD" },
+  { svg: audacity, label: "Audacity" },
+  { svg: blender, label: "Blender" },
+  { svg: canva, label: "Canva" },
+  { svg: excel, label: "Excel" },
+  { svg: git, label: "Git" },
+  { svg: github, svg_light: github_light, label: "Github" },
+  { svg: krita, label: "Krita" },
+  { svg: musescore, label: "MuseScore Studio" },
+  { svg: overleaf, label: "Overleaf" },
+  { svg: paintdotnet, label: "paint.net" },
+  { svg: react, label: "React" },
+  { svg: roblox_studio, label: "Roblox Studio" },
+  { svg: vercel, svg_light: vercel_light, label: "Vercel" },
+  { svg: vite, label: "Vite" },
+  { svg: vscode, label: "VS Code" },
 ]
 
 function Skillset() {
@@ -67,7 +99,7 @@ function Skillset() {
         }}
       >
         {languageSkills.map((item, index) => {
-          return <SkillCard key = {index} svg = {item.svg} label = {item.label} />
+          return <SkillCard key = {index} svg = {item.svg} svg_light = {item.svg_light} label = {item.label} />
         })}
       </div>
 
@@ -85,7 +117,7 @@ function Skillset() {
         }}
       >
         {softwareTechSkills.map((item, index) => {
-          return <SkillCard key = {index} svg = {item.svg} label = {item.label} />
+          return <SkillCard key = {index} svg = {item.svg} svg_light = {item.svg_light} label = {item.label} />
         })}
       </div>
     </div>

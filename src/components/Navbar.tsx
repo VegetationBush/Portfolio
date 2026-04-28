@@ -1,18 +1,16 @@
 import "./navbar.css"
 import Button from './Button';
 import Separator from './Separator';
-import git_brand from '@/assets/brandIcons/git.svg?raw'
+import git_brand from '@/assets/github-icon.svg?raw'
 import dark_light from '@/assets/dark-light.svg?raw'
 import file_icon from '@/assets/file-icon.svg?raw'
 import { useState, useEffect } from "react"
+import { useTheme } from "@/ThemeProvider";
 
 const Navbar = () => {
 
-  const [light, setLight] = useState<boolean>(false)
-  useEffect(() => {
-    document.documentElement.classList.toggle("light", light)
-  }, [light])
-
+  const ThemeContext = useTheme()
+  
   return (
     <nav
       style={{
@@ -47,7 +45,7 @@ const Navbar = () => {
         <Button
           label = "Toggle Mode"
           svg = {dark_light}
-          onClick = {() => setLight(d => !d)}
+          onClick = {() => ThemeContext.toggleTheme()}
         />
         <Separator/>
         <Button

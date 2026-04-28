@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100" height="100" viewBox="0 0 100 100">
+  <defs>
+    <clipPath id="clip-SPRK_default_preset_name_custom_1">
+      <rect width="100" height="100"/>
+    </clipPath>
+  </defs>
+  <g id="SPRK_default_preset_name_custom_1" data-name="SPRK_default_preset_name_custom – 1" clip-path="url(#clip-SPRK_default_preset_name_custom_1)">
+    <rect id="Rectangle_5" data-name="Rectangle 5" width="90" height="90" rx="12" transform="translate(5 5)" fill="#121215"/>
+    <path id="Union_1" data-name="Union 1" d="M0,45.974,4.482,29.246l30.277,8.113,2.126-7.936,16.421,4.4L51.18,41.759l.021.006L46.719,58.492Zm24.456-24.84L22.33,29.069l-16.421-4.4,2.126-7.935-.021-.006L12.5,0,59.215,12.518,54.733,29.246Z" transform="translate(20 20.754)" fill="#fff"/>
+  </g>
+</svg>

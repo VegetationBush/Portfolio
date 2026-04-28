@@ -1,12 +1,16 @@
 import Card from "@/components/Card";
 import IconSVG from "@/components/IconSVG";
+import { useTheme } from "@/ThemeProvider";
 
 interface SkillCardProps extends React.HTMLAttributes<HTMLDivElement> {
   svg: string,
+  svg_light?: string,
   label: string,
 }
 
-const SkillCard = ({ svg, label }: SkillCardProps) => {
+const SkillCard = ({ svg, svg_light, label }: SkillCardProps) => {
+  const ThemeContext = useTheme()
+
   return (
     <Card
       style = {{
@@ -14,7 +18,7 @@ const SkillCard = ({ svg, label }: SkillCardProps) => {
         fontSize: "1.25rem",
 
         borderRadius: "0.75rem",
-        padding: "1.35rem 1rem",
+        padding: "1.25rem 1rem",
 
         display: "flex",
         alignItems: "center",
@@ -23,7 +27,11 @@ const SkillCard = ({ svg, label }: SkillCardProps) => {
       }}
     >
       <span>
-        {svg && <IconSVG svg = {svg} color = "var(--primary)" width = {"2rem"} height = {"2rem"}/>}
+        <IconSVG
+          svg = {(svg_light == null || ThemeContext.theme == "dark") ? svg : svg_light }
+          width = {"1.5rem"}
+          height = {"1.5rem"}
+        />
       </span>
       <span>
         {label}
