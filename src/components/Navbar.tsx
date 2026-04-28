@@ -4,7 +4,6 @@ import Separator from './Separator';
 import git_brand from '@/assets/github-icon.svg?raw'
 import dark_light from '@/assets/dark-light.svg?raw'
 import file_icon from '@/assets/file-icon.svg?raw'
-import { useState, useEffect } from "react"
 import { useTheme } from "@/ThemeProvider";
 
 const Navbar = () => {
