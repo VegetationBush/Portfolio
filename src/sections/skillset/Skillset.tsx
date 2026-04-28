@@ -20,8 +20,8 @@ import r from "./languageImages/r.svg?raw"
 import typescript from "./languageImages/typescript.svg?raw"
 
 const languageSkills: ({ svg: string, svg_light?: string, label: string })[] = [
-  { svg: html_icon, label: "HTML" },
   { svg: css_icon, label: "CSS" },
+  { svg: html_icon, label: "HTML" },
   { svg: java, label: "Java" },
   { svg: javascript, label: "JavaScript" },
   { svg: latex, svg_light: latex_light, label: "LaTeX" },
@@ -78,47 +78,61 @@ function Skillset() {
   
   return (
     <div
+      ref = {ref}
       style = {{
-        display: "flex",
+        transform: isVisible ? "translateX(0px)" : "translateX(4rem)",
+        transition: "all 0.3s ease-out",
+        opacity: isVisible ? 1 : 0,
+
+        display: "grid",
         flexDirection: "column",
 
-        gap: "3rem"
+        padding: "5rem 0rem",
+        gap: "8rem"
       }}
     >
       <div
-        ref={ref}
-        className = "split-container"
         style = {{
-          transform: isVisible ? "translateX(0px)" : "translateX(4rem)",
-          transition: "all 0.3s ease-out",
-          opacity: isVisible ? 1 : 0,
-
-          flexWrap: "wrap",
           display: "flex",
-          gap: "1rem",
+          flexDirection: "column",
+          gap: "3rem",
         }}
       >
-        {languageSkills.map((item, index) => {
-          return <SkillCard key = {index} svg = {item.svg} svg_light = {item.svg_light} label = {item.label} />
-        })}
+        <h2>Languages</h2>
+        <div
+          style = {{
+            flexWrap: "wrap",
+            flexDirection: "row",
+            display: "flex",
+            gap: "1rem",
+          }}
+        >
+          {languageSkills.map((item, index) => {
+            return <SkillCard key = {index} svg = {item.svg} svg_light = {item.svg_light} label = {item.label} />
+          })}
+        </div>
       </div>
 
       <div
-        ref={ref}
-        className = "split-container"
         style = {{
-          transform: isVisible ? "translateX(0px)" : "translateX(4rem)",
-          transition: "all 0.3s ease-out",
-          opacity: isVisible ? 1 : 0,
-
-          flexWrap: "wrap",
           display: "flex",
-          gap: "1rem",
+          flexDirection: "column",
+          gap: "3rem",
         }}
       >
-        {softwareTechSkills.map((item, index) => {
-          return <SkillCard key = {index} svg = {item.svg} svg_light = {item.svg_light} label = {item.label} />
-        })}
+        <h2>Technology</h2>
+        <div
+          style = {{
+            flexWrap: "wrap",
+            flexDirection: "row",
+            display: "flex",
+            gap: "1rem",
+          }}
+        >
+          {softwareTechSkills.map((item, index) => {
+            return <SkillCard key = {index} svg = {item.svg} svg_light = {item.svg_light} label = {item.label} />
+          })}
+        </div>
       </div>
     </div>
   )
