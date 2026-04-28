@@ -52,7 +52,7 @@ function App() {
       >
         <Landing/>
         <AboutMe/>
-        <Skillset/>
+        <Skillset/> 
       </div>
     </div>
   )
