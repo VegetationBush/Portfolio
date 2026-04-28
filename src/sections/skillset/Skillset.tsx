@@ -1,8 +1,6 @@
 import { useFadeInOnScroll } from "@/util/fadeInOnScroll"
 import SkillCard from "./components/SkillCard";
 
-import git_brand from "@/assets/github-icon.svg?raw"
-
 import html_icon from "./languageImages/html.svg?raw"
 import css_icon from "./languageImages/css.svg?raw"
 import java from "./languageImages/java.svg?raw"
