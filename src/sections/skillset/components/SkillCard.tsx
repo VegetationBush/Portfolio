@@ -1,4 +1,4 @@
-import Card from "@/components/Card";
+import PerspectiveCard from "@/components/PerspectiveCard";
 import IconSVG from "@/components/IconSVG";
 import { useTheme } from "@/ThemeProvider";
 
@@ -12,7 +12,7 @@ const SkillCard = ({ svg, svg_light, label }: SkillCardProps) => {
   const ThemeContext = useTheme()
 
   return (
-    <Card
+    <PerspectiveCard
       style = {{
         height: "2rem",
         fontSize: "1.25rem",
@@ -29,14 +29,14 @@ const SkillCard = ({ svg, svg_light, label }: SkillCardProps) => {
       <span>
         <IconSVG
           svg = {(svg_light == null || ThemeContext.theme == "dark") ? svg : svg_light }
-          width = {"1.5rem"}
-          height = {"1.5rem"}
+          width = "1.5rem"
+          height = "1.5rem"
         />
       </span>
       <span>
         {label}
       </span>
-    </Card>
+    </PerspectiveCard>
   )
 }
 
