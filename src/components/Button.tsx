@@ -1,12 +1,14 @@
+import "./button.css"
+
 import React from "react";
 import IconSVG from "./IconSVG";
-import "../index.css"
 
 type ButtonSize = "small" | "medium" | "large";
 interface CustomButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   size?: ButtonSize;
   label?: string;
   svg?: string;
+  collapsible?: boolean;
   onClick?: () => void;
 }
 
@@ -16,7 +18,7 @@ const sizeStyles = {
   large: { padding: "1rem 1.25rem", fontSize: "1.2rem" },
 };
 
-const Button: React.FC<CustomButtonProps> = ({onClick, label, svg, size = "small", style, ...props }) => {
+const Button: React.FC<CustomButtonProps> = ({onClick, label, svg, size = "small", collapsible = true, style, ...props }) => {
   return (
     <button
       {...props}
@@ -38,8 +40,8 @@ const Button: React.FC<CustomButtonProps> = ({onClick, label, svg, size = "small
         ...style,
       }}
     >
-      {svg && <IconSVG svg = {svg} color = "var(--primary)" width = {"1rem"} height = {"1rem"}/>}
-      {label}
+      <span>{svg && <IconSVG svg = {svg} color = "var(--primary)" width = {"1rem"} height = {"1rem"}/>}</span>
+      <span className = {collapsible ? "button-collapsable-label" : ""}>{label}</span>
     </button>
   );
 };

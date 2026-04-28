@@ -70,6 +70,13 @@ h2 {
   color: var(--primary);
 }
 
+h3 {
+  font-size: 1em;
+  font-weight: 600;
+  line-height: 1rem;
+  color: var(--primary);
+}
+
 p {
   font-size: 1rem;
   font-weight: 400;

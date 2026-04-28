@@ -1,4 +1,4 @@
-import '../index.css'
+import "./navbar.css"
 import Button from './Button';
 import Separator from './Separator';
 import git_brand from '../assets/git_brand.svg?raw'
@@ -25,11 +25,18 @@ const Navbar = () => {
         justifyContent: "space-between",
         alignItems: "center",
         backgroundColor: "var(--background)",
-        borderBottom: "var(--border)",
         boxShadow: "var(--shadow-out)",
       }}
     >
-      <div style={{position: "absolute", right: 90, justifyContent: "flex-end", display: "flex", gap: 8}}>
+      <div
+        className = "navbar-action-container"
+        style = {{
+          position: "absolute",
+          justifyContent: "flex-end",
+          display: "flex",
+          gap: "0.5rem"
+        }}
+      >
         <Button
           label = "Github"
           svg = {git_brand}

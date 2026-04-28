@@ -1,0 +1,9 @@
+.navbar-action-container {
+  right: 5rem;
+}
+
+@media (max-width: 768px) {
+  .navbar-action-container {
+    right: 1rem;
+  }
+}

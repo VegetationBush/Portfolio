@@ -4,7 +4,7 @@ import "./intro.css"
 const Intro = () => {
   return (
     <div
-      style={{
+      style = {{
         height: "100%",
         width: "100%",
         position: "absolute",
@@ -12,7 +12,7 @@ const Intro = () => {
       }}
     >
       <div
-        style={{
+        style = {{
           fontSize: 100,
           fontWeight: 600,
           color: "var(--primary)",
@@ -34,9 +34,9 @@ const Intro = () => {
         Hi, I'm Hans.
       </div>
       <div
-        style={{
+        style = {{
           fontSize: 30,
-          fontWeight: 600,
+          fontWeight: 400,
           color: "var(--secondary)",
           textWrap: "nowrap",
           opacity: 0,
@@ -52,7 +52,8 @@ const Intro = () => {
           `,
           animationDelay: "1s, 2s",
           animationFillMode: "forwards",
-        }}>
+        }}
+      >
         Thanks for checking in!
       </div>
 
