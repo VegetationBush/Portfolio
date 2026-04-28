@@ -3,7 +3,7 @@ import Card from '@/components/Card'
 import { useFadeInOnScroll } from '@/util/fadeInOnScroll'
 
 const timelineItems: ({year: string, description: string})[] = [
-  {year: "2018", description: "Composed my first peice of music."},
+  {year: "2018", description: "A flash of inspiration. Composed my first peice of music!"},
   {year: "2019", description: "Began my game development journey and wrote my first line of real code."},
   {year: "2020", description: "Began experimenting with various software. Completed my very first paid commision."},
   {year: "2021", description: "Released my first successful software product."},
@@ -80,7 +80,7 @@ function AboutMe() {
         style = {{
           position: "relative",
           minWidth: "20rem",
-          minHeight: "35rem",
+          minHeight: "43.5rem",
 
           display: "flex",
           flexDirection: "column",
@@ -136,20 +136,18 @@ function AboutMe() {
               justifyContent: "space-between",
             }}>
               {timelineItems.map((_, index) => (
-                <div>
-                  <div
-                    key = {index}
-                    style = {{
-                      position: "relative",
-                      textAlign: "center",
-                      height: "1rem",
-                      width: "1rem",
-                      backgroundColor: "var(--background)",
-                      borderRadius: "100%",
-                      border: "0.225rem solid var(--primary)",
-                    }}
-                  />
-                </div>
+                <div
+                  key = {index}
+                  style = {{
+                    position: "relative",
+                    textAlign: "center",
+                    height: "1rem",
+                    width: "1rem",
+                    backgroundColor: "var(--background)",
+                    borderRadius: "100%",
+                    border: "0.225rem solid var(--primary)",
+                  }}
+                />
               ))}
             </div>
             
