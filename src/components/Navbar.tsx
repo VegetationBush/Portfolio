@@ -25,7 +25,7 @@ const Navbar = () => {
         justifyContent: "space-between",
         alignItems: "center",
         backgroundColor: "var(--background)",
-        boxShadow: "var(--shadow-out)",
+        boxShadow: "var(--shadow)",
       }}
     >
       <div

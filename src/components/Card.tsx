@@ -11,7 +11,7 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
         ref={ref}
         {...props}
         style={{
-          backgroundColor: "var(--background)",
+          backgroundColor: "var(--background-secondary)",
           borderRadius: "2rem",
           border: "var(--border)",
           boxShadow: "var(--shadow)",
