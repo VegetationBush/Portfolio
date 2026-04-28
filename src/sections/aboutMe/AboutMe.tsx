@@ -13,7 +13,7 @@ const timelineItems: ({year: string, description: string})[] = [
 
 function AboutMe() {
   const { ref, isVisible } = useFadeInOnScroll();
-
+  
   return (
     <div
       ref={ref}
@@ -46,7 +46,7 @@ function AboutMe() {
 
           display: "flex",
           flexDirection: "column",
-          rowGap: "2rem",
+          rowGap: "3rem",
         }}
       >
         <h2>About Me</h2>
@@ -80,7 +80,7 @@ function AboutMe() {
         style = {{
           position: "relative",
           minWidth: "20rem",
-          minHeight: "30rem",
+          minHeight: "35rem",
 
           display: "flex",
           flexDirection: "column",
@@ -110,7 +110,6 @@ function AboutMe() {
           <div style = {{
             display: "flex",
             width: "100%",
-
             gap: "1rem",
           }}>
 
@@ -122,6 +121,7 @@ function AboutMe() {
               translate: "50% 0",
               left: "0.25rem",
               
+              WebkitMaskImage: "linear-gradient(to bottom, black 0%, black 65%, transparent)",
               backgroundColor: "var(--accent)",
             }}/>
 
@@ -129,7 +129,7 @@ function AboutMe() {
             <div style = {{
               position: "relative",
               width: "1rem",
-              height: "100%",
+              height: `${timelineItems.length / (timelineItems.length + 1) * 100}%`,
 
               display: "flex",
               flexDirection: "column",
@@ -157,15 +157,12 @@ function AboutMe() {
             {/* Timeline content */}
             <div style = {{
               position: "relative",
-              height: "100%",
+              height: `100%`,
               flex: 1,
-
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-between",
+              bottom: "0.1rem",
             }}>
               {timelineItems.map((item, index) => (
-                <div key = {index}>
+                <div key = {index} style = {{position: "absolute", top: `${index / timelineItems.length * 100}%`}}>
                   <h3>{item.year}</h3>
                   <p>{item.description}</p>
                 </div>
