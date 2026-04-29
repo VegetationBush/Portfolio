@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar"
 import AboutMe from "@/sections/aboutMe/AboutMe"
 import Landing from "@/sections/landing/Landing"
 import Skillset from "@/sections/skillset/Skillset"
-
+import Showcase from "./sections/showcase/Showcase"
 import { useEffect, useRef } from "react"
 
 function App() {
@@ -52,7 +52,8 @@ function App() {
       >
         <Landing/>
         <AboutMe/>
-        <Skillset/> 
+        <Skillset/>
+        <Showcase/>
       </div>
     </div>
   )

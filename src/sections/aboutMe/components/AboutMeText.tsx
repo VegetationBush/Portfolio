@@ -18,7 +18,7 @@ const AboutMeText = () => {
       </p>
 
       <div style = {{ display: "flex", flexDirection: "column", rowGap: "0.5rem" }}>
-        <h3>The Spark</h3>
+        <h4>The Spark</h4>
         <p>
           When I was still in elementary school, I quickly found myself immersed in the world of creation, startng my career with music
           composition. I have since explored and developed various skills across multiple disciplines, from digital arts and game
@@ -27,7 +27,7 @@ const AboutMeText = () => {
       </div>
       
       <div style = {{ display: "flex", flexDirection: "column", rowGap: "0.5rem" }}>
-        <h3>A Lifelong Learner</h3>
+        <h4>A Lifelong Learner</h4>
         <p>
           I am grateful for the opportunity to catch this dream when I was still young. It has shaped how I think and grow, in ways that would
           be greatly foreign to my past self. Over time, I learned that consistency with a splash of talent (and a bit of luck), can take you

@@ -71,6 +71,13 @@ h2 {
 }
 
 h3 {
+  font-size: 1.75em;
+  font-weight: 600;
+  line-height: 1rem;
+  color: var(--primary);
+}
+
+h4 {
   font-size: 1em;
   font-weight: 600;
   line-height: 1rem;

@@ -14,7 +14,7 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
           backgroundColor: "var(--background-secondary)",
           borderRadius: "2rem",
           border: "var(--border)",
-          boxShadow: "var(--shadow), var(--shadow-inner)",
+          boxShadow: "var(--shadow)",
           padding: "1rem",
           color: "var(--primary)",
           overflow: "hidden",

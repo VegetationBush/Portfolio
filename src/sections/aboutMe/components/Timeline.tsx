@@ -20,8 +20,8 @@ const Timeline = () => {
 
         display: "flex",
         flexDirection: "column",
-        padding: "2rem",
-        gap: "1rem",
+        padding: "3rem 2rem",
+        gap: "2rem",
       }}
     >
       <h3 style = {{
@@ -103,7 +103,7 @@ const Timeline = () => {
           }}>
             {timelineItems.map((item, index) => (
               <div key = {index} style = {{ position: "relative", flex: 1 }}>
-                <h3>{item.year}</h3>
+                <h4>{item.year}</h4>
                 <p>{item.description}</p>
               </div>
             ))}
