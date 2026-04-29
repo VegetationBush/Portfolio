@@ -50,6 +50,8 @@ function Showcase() {
     <div
       className = "fade-in-container"
       style = {{
+        width: "100%",
+        
         display: "flex",
         flexDirection: "column",
         padding: "5rem 0rem",

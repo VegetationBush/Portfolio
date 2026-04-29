@@ -83,10 +83,12 @@ function Skillset() {
     <div
       className = "fade-in-container"
       style = {{
+        width: "100%",
+
         display: "grid",
         flexDirection: "column",
         padding: "5rem 0rem",
-        gap: "3rem"
+        gap: "3rem",
       }}
     >
       <h2>Experience</h2>

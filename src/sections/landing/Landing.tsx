@@ -7,6 +7,7 @@ export default function Landing() {
     <div
       className = "section"
       style = {{
+        width: "100%",
         position: "relative",
         height: "var(--content-height)",
         maxHeight: "75rem",

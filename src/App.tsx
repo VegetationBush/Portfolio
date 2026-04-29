@@ -44,12 +44,13 @@ function App() {
           position: "relative",
           width: "100vw",
           maxWidth: "85rem",
+          flex: 1,
+          
           flexDirection: "column",
           margin: "0 auto",
-          contain: "strict",
-          overflowX: "hidden",
+          contain: "paint",
+          overflowX: "clip",
           scrollbarWidth: "none",
-          flex: 1,
         }}
       >
         <Landing/>
