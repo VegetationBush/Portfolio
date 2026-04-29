@@ -19,7 +19,8 @@ function App() {
     el.style.overflow = "hidden";
 
     const timer = setTimeout(() => {
-      el.style.overflow = "auto";
+      el.style.overflowY = "auto";
+      el.style.overflowX = "clip"; // NO horizontal scrolling
     }, 2150);
 
     return () => clearTimeout(timer);
@@ -49,7 +50,6 @@ function App() {
           flexDirection: "column",
           margin: "0 auto",
           contain: "paint",
-          overflowX: "clip",
           scrollbarWidth: "none",
         }}
       >
