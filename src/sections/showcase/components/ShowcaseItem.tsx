@@ -12,7 +12,6 @@ export interface ShowcaseItemProps extends React.HTMLAttributes<HTMLDivElement> 
 }
 
 const ShowcaseItem = ({ title, subtitle, description, image, tags, caption, link }: ShowcaseItemProps) => {
-
   return (
     <Card
       className = "fade-in-container"
@@ -90,6 +89,7 @@ const ShowcaseItem = ({ title, subtitle, description, image, tags, caption, link
             padding: "0.5rem 2rem",
             whiteSpace: "pre-wrap",
           }}
+          collapsible = {false}
           label = "Visit  ->"
           onClick = {() => window.open(link, "_blank")}
         />

@@ -46,7 +46,7 @@ function App() {
           maxWidth: "85rem",
           flexDirection: "column",
           margin: "0 auto",
-          contain: "paint",
+          contain: "strict",
           overflowX: "hidden",
           scrollbarWidth: "none",
           flex: 1,

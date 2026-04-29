@@ -1,9 +1,11 @@
 .fade-in-container {
   transform: translateX(4rem);
+  opacity: 0;
+
   transition:
+    var(--transition),
     transform 0.3s ease-out,
     opacity 0.3s ease-out;
-  opacity: 0;
 }
 
 .fade-in-container.visible {

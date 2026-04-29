@@ -20,7 +20,6 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
           boxShadow: "var(--shadow)",
 
           transform: (isHovering ? "scale(1.0075)" : "scale(1)"),
-          transition: "transform 0.15s ease-out",
 
           padding: "1rem",
           color: "var(--primary)",
