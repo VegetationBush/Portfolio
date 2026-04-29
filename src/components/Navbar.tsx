@@ -1,7 +1,8 @@
-import "./navbar.css"
+import "@/styles/navbar.css"
 import Button from './Button';
 import Separator from './Separator';
 import git_brand from '@/assets/github-icon.svg?raw'
+import linkedin_icon from '@/assets/linkedin.svg?raw'
 import dark_light from '@/assets/dark-light.svg?raw'
 import file_icon from '@/assets/file-icon.svg?raw'
 import { useTheme } from "@/ThemeProvider";
@@ -36,20 +37,27 @@ const Navbar = () => {
         }}
       >
         <Button
-          label = "Github"
-          svg = {git_brand}
-          onClick = {() => window.open("https://github.com/VegetationBush", "_blank")}
-        />
-        <Separator/>
-        <Button
           label = "Toggle Mode"
           svg = {dark_light}
           onClick = {() => ThemeContext.toggleTheme()}
         />
         <Separator/>
         <Button
+          label = "LinkedIn"
+          svg = {linkedin_icon}
+          onClick = {() => window.open("https://www.linkedin.com/in/hans-yang-a2096738b/", "_blank")}
+        />
+        <Separator/>
+        <Button
+          label = "Github"
+          svg = {git_brand}
+          onClick = {() => window.open("https://github.com/VegetationBush", "_blank")}
+        />
+        <Separator/>
+        <Button
           label = "Resume"
           svg = {file_icon}
+          onClick = {() => window.open("https://github.com/VegetationBush", "_blank")}
         />
       </div>
 

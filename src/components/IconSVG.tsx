@@ -13,10 +13,12 @@ const IconSVG = ({ svg, color, width, height, style }: IconProps) => {
       style={{
         width: width,
         height: height,
-        color,
+        color: color,
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+
+        transition: "none",
         ...style,
       }}
     />

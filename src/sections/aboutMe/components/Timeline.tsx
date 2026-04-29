@@ -40,79 +40,86 @@ const Timeline = () => {
 
         display: "flex",
       }}>
-        
-        {/* timeline line */}
+
+        {/* vertical line */}
         <div style = {{
-          display: "flex",
-          width: "100%",
-          gap: "1rem",
-        }}>
-
-          {/* vertical line */}
-          <div style = {{
-            position: "absolute",
-            height: "100%",
-            width: "0.2rem",
-            translate: "50% 0",
-            left: "0.25rem",
-            
-            WebkitMaskImage: "linear-gradient(to bottom, black 0%, black 85%, transparent)",
-            backgroundColor: "var(--accent)",
-          }}/>
-
-          {/* dots */}
-          <div style = {{
-            position: "relative",
-            height: "100%",
-            width: "1rem",
-
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-between",
-          }}>
-            {timelineItems.map((_, index) => (
-              <div
-                key = {index}
-                style = {{
-                  position: "relative",
-                  textAlign: "center",
-                  height: "1rem",
-                  width: "1rem",
-
-                  backgroundColor: "var(--background)",
-                  borderRadius: "100%",
-                  border: "0.225rem solid var(--primary)",
-                }}
-              />
-            ))}
-
-            {/* add a trailing div for spacing hack */}
-            <div/> 
-          </div>
+          position: "absolute",
+          height: "100%",
+          width: "0.2rem",
+          translate: "50% 0",
+          left: "0.25rem",
           
+          WebkitMaskImage: "linear-gradient(to bottom, black 0%, black 85%, transparent)",
+          backgroundColor: "var(--accent)",
+        }}/>
+        
+        <div style = {{
+          position: "relative",
+          flex: 1,
 
-          {/* Timeline content */}
-          <div style = {{
-            position: "relative",
-            flex: 1,
+          gap: "1.25rem",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
+        }}>
+          {timelineItems.map((item, index) => {
+            return (
+              <div 
+                className = "fade-in-container"
+                style = {{
+                  display: "flex",
+                  flexDirection: "row",
+                  gap: "2rem",
+                }}
+              >
 
-            gap: "1.25rem",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-between",
-          }}>
-            {timelineItems.map((item, index) => (
-              <div key = {index} style = {{ position: "relative", flex: 1 }}>
-                <h4>{item.year}</h4>
-                <p>{item.description}</p>
+                {/* dot with line*/}
+                <div
+                  key = {index}
+                  style = {{
+                    position: "relative",
+                    textAlign: "center",
+                    height: "1rem",
+                    width: "1rem",
+                    overflow: "visible",
+
+                    backgroundColor: "var(--background)",
+                    borderRadius: "100%",
+                    border: "0.225rem solid var(--primary)",
+                  }}
+                >
+                  <div style = {{
+                    position: "absolute",
+                    top: "50%",
+                    left: "0.75rem",
+                    translate: "0% -50%",
+
+                    width: "0.75rem",
+                    height: "0.225rem",
+                    backgroundColor: "var(--primary)",
+                  }}/>
+                </div>
+
+                {/* content */}
+                <div
+                  key = {index}
+                  style = {{
+                    position: "relative",
+                    flex: 1,
+                  }}
+                >
+                  <h4>{item.year}</h4>
+                  <p>{item.description}</p>
+                </div>
               </div>
-            ))}
+            )
+          })}
 
-            {/* add a trailing div for spacing hack */}
-            <div/>
-          </div>
-
+          {/* add a trailing div for spacing hack */}
+          <div/>
         </div>
+
+
       </div>
     </Card>
   )

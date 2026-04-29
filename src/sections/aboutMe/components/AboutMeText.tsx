@@ -17,7 +17,10 @@ const AboutMeText = () => {
         motivated when I turn ideas into real, tangible curiosities.
       </p>
 
-      <div style = {{ display: "flex", flexDirection: "column", rowGap: "0.5rem" }}>
+      <div 
+        className = "fade-in-container"
+        style = {{ display: "flex", flexDirection: "column", rowGap: "0.5rem" }}
+      >
         <h4>The Spark</h4>
         <p>
           When I was still in elementary school, I quickly found myself immersed in the world of creation, startng my career with music
@@ -26,7 +29,10 @@ const AboutMeText = () => {
         </p>
       </div>
       
-      <div style = {{ display: "flex", flexDirection: "column", rowGap: "0.5rem" }}>
+      <div
+        className = "fade-in-container"
+        style = {{ display: "flex", flexDirection: "column", rowGap: "0.5rem" }}
+      >
         <h4>A Lifelong Learner</h4>
         <p>
           I am grateful for the opportunity to catch this dream when I was still young. It has shaped how I think and grow, in ways that would

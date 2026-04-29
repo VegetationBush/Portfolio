@@ -27,8 +27,8 @@ const ScrollTip = () => {
 
   return (
     <div
-      ref={containerRef}
-      style={{
+      ref = {containerRef}
+      style = {{
         height: "2rem",
         width: "7rem",
 

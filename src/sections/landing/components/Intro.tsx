@@ -12,8 +12,8 @@ const Intro = () => {
       }}
     >
       <div
+        className = "intro-title"
         style = {{
-          fontSize: 100,
           fontWeight: 600,
           color: "var(--primary)",
           textWrap: "nowrap",
@@ -34,8 +34,8 @@ const Intro = () => {
         Hi, I'm Hans.
       </div>
       <div
+        className = "intro-subtitle"
         style = {{
-          fontSize: 30,
           fontWeight: 400,
           color: "var(--secondary)",
           textWrap: "nowrap",
@@ -59,20 +59,21 @@ const Intro = () => {
 
       <style>
         {`@keyframes introMoveTitle {
-          0%   { transform: translate(-50%, -50%) translateY(0.75rem); opacity: 0 }
-          100% { transform: translate(-50%, -50%) translateY(-3rem); opacity: 1 }
-        }`}
-        {`@keyframes introMoveSubtitle {
-          0%   { transform: translate(-50%, -50%) translateY(3.5rem); opacity: 0 }
-          100% { transform: translate(-50%, -50%) translateY(1.5rem); opacity: 1 }
+          0%   { transform: translate(-50%, 0%); opacity: 0 }
+          100% { transform: translate(-50%, -70%); opacity: 1 }
         }`}
         {`@keyframes introMoveTitleLeft {
-          0%   { transform: translate(-50%, -50%) translateY(-3rem); }
-          100% { transform: translate(0%, -50%) translateY(-3rem); left: 0px}
+          0%   { transform: translate(-50%, -70%) translateY(0%); }
+          100% { transform: translate(0%, -70%) translateY(0%); left: 0px}
+        }`}
+
+        {`@keyframes introMoveSubtitle {
+          0%   { transform: translate(-50%, 100%); opacity: 0 }
+          100% { transform: translate(-50%, 50%); opacity: 1 }
         }`}
         {`@keyframes introMoveSubtitleLeft {
-          0%   { transform: translate(-50%, -50%) translateY(1.5rem); }
-          100% { transform: translate(2%, -50%) translateY(1.5rem); left: 0px}
+          0%   { transform: translate(-50%, 50%); }
+          100% { transform: translate(2.5%, 50%); left: 0px}
         }`}
       </style>
     </div>

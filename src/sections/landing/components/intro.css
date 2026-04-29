@@ -1,9 +1,21 @@
 .intro-marquee-array {
   width: 75%;
 }
+.intro-title {
+  font-size: 6.5rem;
+}
+.intro-subtitle {
+  font-size: 2rem;
+}
 
 @media (max-width: 768px) {
   .intro-marquee-array {
     width: 100%;
+  }
+  .intro-title {
+    font-size: 3.5rem;
+  }
+  .intro-subtitle {
+    font-size: 1rem;
   }
 }

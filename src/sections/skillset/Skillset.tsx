@@ -1,4 +1,3 @@
-import { useFadeInOnScroll } from "@/util/fadeInOnScroll"
 import SkillCard from "./components/SkillCard";
 import type { SkillCardProps } from "./components/SkillCard";
 import Card from "@/components/Card";
@@ -80,16 +79,10 @@ const softwareTechSkills: SkillCardProps[] = [
 ]
 
 function Skillset() {
-  const { ref, isVisible } = useFadeInOnScroll();
-  
   return (
     <div
-      ref = {ref}
+      className = "fade-in-container"
       style = {{
-        transform: isVisible ? "translateX(0px)" : "translateX(4rem)",
-        transition: "all 0.3s ease-out",
-        opacity: isVisible ? 1 : 0,
-
         display: "grid",
         flexDirection: "column",
         padding: "5rem 0rem",
@@ -131,6 +124,7 @@ function Skillset() {
 
           {/* languages */}
           <Card
+            className = "fade-in-container"
             style = {{
               display: "flex",
               flexDirection: "column",
@@ -161,6 +155,7 @@ function Skillset() {
 
           {/* tech and software */}
           <Card
+            className = "fade-in-container"
             style = {{
               display: "flex",
               flexDirection: "column",

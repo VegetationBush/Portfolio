@@ -1,4 +1,4 @@
-import "./button.css"
+import "@/styles/button.css"
 
 import React from "react";
 import IconSVG from "./IconSVG";
@@ -40,9 +40,16 @@ const Button: React.FC<CustomButtonProps> = ({onClick, label, svg, size = "small
         ...style,
       }}
     >
-      <span>
-        {svg && <IconSVG svg = {svg} color = "var(--primary)" width = {"1.1rem"} height = {"1.1rem"}/>}
-      </span>
+      
+      {
+        svg && <IconSVG
+          svg = {svg}
+          color = "var(--primary)"
+          width = {"1.1rem"}
+          height = {"1.1rem"}
+        />
+      }
+     
       <span className = { collapsible ? "button-collapsable-label" : "" }>
         {label}
       </span>
