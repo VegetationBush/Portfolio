@@ -29,7 +29,7 @@ function App() {
   return (
     <div style = {{
       display: "flex",
-      height: "100dvh",
+      height: "100vh",
       width: "100vw",
       flexDirection: "column",
       backgroundColor: "var(--background)",
