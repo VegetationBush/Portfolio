@@ -33,7 +33,7 @@ function App() {
       width: "100vw",
       flexDirection: "column",
       backgroundColor: "var(--background)",
-      // overflow: "clip",
+      overflow: "clip",
     }}>
       <FadeInObserver/>
       <Navbar/>
