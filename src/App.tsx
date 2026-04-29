@@ -21,7 +21,7 @@ function App() {
     const timer = setTimeout(() => {
       el.style.overflowY = "auto";
       el.style.overflowX = "clip"; // NO horizontal scrolling
-    }, 2150);
+    }, 2000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -34,7 +34,7 @@ function App() {
       minHeight: "25rem",
       flexDirection: "column",
       backgroundColor: "var(--background)",
-      overflow: "hidden",
+      overflow: "clip",
     }}>
       <FadeInObserver/>
       <Navbar/>
