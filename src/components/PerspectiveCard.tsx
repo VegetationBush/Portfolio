@@ -3,7 +3,7 @@ import type { MouseEvent } from 'react';
 import Card from './Card';
 import type {CardProps} from './Card';
 
-const PERSPECTIVE_CARD_STRENGTH = 0.1
+const PERSPECTIVE_CARD_STRENGTH = 0.4
 const PerspectiveCard: React.FC<CardProps> = ({
   children,
   style,
@@ -47,7 +47,7 @@ const PerspectiveCard: React.FC<CardProps> = ({
       onMouseMove = {handleMouseMove}
       onMouseLeave = {handleMouseLeave}
     >
-      <Card ref = {cardRef} {...props} style = {{...style, transition: "transform 0.2s ease-out"}}>
+      <Card ref = {cardRef} {...props} style = {{...style, transition: "transform 0.15s ease-out"}}>
         {children}
       </Card>
     </div>
