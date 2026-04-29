@@ -3,7 +3,7 @@ import type { MouseEvent } from 'react';
 import Card from './Card';
 import type {CardProps} from './Card';
 
-const PERSPECTIVE_CARD_STRENGTH = 0.3
+const PERSPECTIVE_CARD_STRENGTH = 0.1
 const PerspectiveCard: React.FC<CardProps> = ({
   children,
   style,
@@ -30,7 +30,6 @@ const PerspectiveCard: React.FC<CardProps> = ({
     const rotateX = Math.sin(angle) * -PERSPECTIVE_CARD_STRENGTH * percentY;
     const rotateY = Math.cos(angle) * PERSPECTIVE_CARD_STRENGTH * percentX;
     card.style.transform = `rotateX(${rotateX}rad) rotateY(${rotateY}rad)`;
-    console.log(rotateX, rotateY)
   };
 
   const handleMouseLeave = () => {
