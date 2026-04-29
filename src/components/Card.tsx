@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 
 export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode;
@@ -7,8 +6,6 @@ export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
 
 const Card = React.forwardRef<HTMLDivElement, CardProps>(
   ({ children, style, ...props }, ref) => {
-    const [isHovering, setIsHovering] = useState<boolean>(false);
-    
     return (
       <div
         ref = {ref}
@@ -19,15 +16,11 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
           border: "var(--border)",
           boxShadow: "var(--shadow)",
 
-          transform: (isHovering ? "scale(1.0075)" : "scale(1)"),
-
           padding: "1rem",
           color: "var(--primary)",
           overflow: "hidden",
           ...style,
         }}
-        onMouseEnter = {() => setIsHovering(true)}
-        onMouseLeave = {() => setIsHovering(false)}
       >
         {children}
       </div>
