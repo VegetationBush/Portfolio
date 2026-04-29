@@ -6,12 +6,13 @@ export interface ShowcaseItemProps extends React.HTMLAttributes<HTMLDivElement> 
   subtitle: string,
   description: string,
   image: string,
+  highlights?: string[], // tag-like items that stand out in a golden color
   tags: string[],
   caption: string,
   link: string,
 }
 
-const ShowcaseItem = ({ title, subtitle, description, image, tags, caption, link }: ShowcaseItemProps) => {
+const ShowcaseItem = ({ title, subtitle, description, image, tags, highlights, caption, link }: ShowcaseItemProps) => {
   return (
     <Card
       className = "fade-in-container"
@@ -42,12 +43,35 @@ const ShowcaseItem = ({ title, subtitle, description, image, tags, caption, link
         <div style = {{
           display: "flex",
           flexDirection: "column",
-          gap: "0.5rem",
+          gap: "0.75rem",
         }}>
           <h3>{title}</h3>
           <h5>{subtitle}</h5>
         </div>
         <p>{description}</p>
+
+        {/* highlights */}
+        {highlights && <div style = {{
+          display: "flex",
+          flexWrap: "wrap",
+          gap: "0.5rem",
+        }}>
+          {highlights.map((tag, index) => {
+            return (
+              <div
+                key = {index}
+                style = {{
+                  padding: "0.15rem 0.5rem",
+                  borderRadius: "0.25rem",
+                  backgroundColor: "oklch(from var(--emphasis) l c h / 0.35)",
+                  border: "1px solid var(--emphasis)",
+                }}
+              >
+                <p style = {{ color: "var(--primary)", fontWeight: "400" }}>{tag}</p>
+              </div>
+            )
+          })}
+        </div>}
 
         {/* tags */}
         <div style = {{
@@ -77,17 +101,27 @@ const ShowcaseItem = ({ title, subtitle, description, image, tags, caption, link
       <div style = {{
         display: "flex",
         justifyContent: "space-between",
-        alignContent: "center",
+        alignItems: "flex-end",
+        
         paddingRight: "0.5rem",
+        flex: 1,
       }}>
         {/* caption */}
-        <h4 style = {{ paddingLeft: "1.5rem", paddingTop: "0.5rem", paddingBottom: "0.5rem" }}>{caption}</h4>
+        <h4 style = {{
+          paddingLeft: "1.5rem",
+          lineHeight: "2.75rem",
+          textAlign: "center",
+          textAnchor: "middle",
+        }}>
+          {caption}
+        </h4>
 
         {/* link */}
         <Button
           style = {{
-            padding: "0.5rem 2rem",
+            padding: "0rem 2rem",
             whiteSpace: "pre-wrap",
+            height: "2.5rem",
           }}
           collapsible = {false}
           label = "Visit  ->"

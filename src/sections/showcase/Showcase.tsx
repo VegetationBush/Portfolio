@@ -12,36 +12,47 @@ const showcaseItems: ShowcaseItemProps[] = [
       and scriptable effects. Users can use the built-in editor to create, import, and serialize animation
       data, which can be run through a custom written interpreter for performant, real-time playback.`,
     image: testimg,
-    tags: ["Luau", "Roblox Studio", "AdobeXD"],
+    tags: ["Luau", "Roblox Studio", "AdobeXD", "Solo Project"],
+    highlights: ["100+ Sales", "$1000+ CAD Revenue"],
     caption: "2023 - Present",
     link: "https://devforum.roblox.com/t/3582453",
   },
   {
-    title: "Visulie",
-    subtitle: "Comprehensive Animation Suite",
-    description: "Animation Editor",
+    title: "FPS",
+    subtitle: "Incremental Simulation Game",
+    description: `A completed incremental game with curated player progression. The gameplay loop focuses on
+      gradual growth, resource management, and strategic upgrades, creating a satisfying progression system
+      that keeps players engaged.`,
     image: testimg,
-    tags: [],
-    caption: "2023-Present",
-    link: "",
+    highlights: ["100K+ Plays", "100+ Peak CCU"],
+    tags: ["Luau", "Roblox Studio", "Musescore", "Team Project"],
+    caption: "2022-2023",
+    link: "https://www.roblox.com/games/11352614810",
   },
   {
-    title: "Visulie",
-    subtitle: "Comprehensive Animation Suite",
-    description: "Animation Editor",
+    title: "Pocket Rift",
+    subtitle: "Multiplayer Experience Prioritizing Emergent Gameplay",
+    description: `
+      An in-dev multiplayer game built with a complex web of interconnected game mechanics designed to produce
+      rich, replayable, and emergent gameplay. The codebase is extensible, robust, and data-oriented, leveraging
+      the use of state propagation and context to produce procedural behaviuor.
+      `,
     image: testimg,
-    tags: [],
+    tags: ["Luau", "Roblox Studio", "Musescore", "Audacity", "Krita", "AdobeXD", "Solo Project"],
     caption: "2023-Present",
-    link: "",
+    link: "https://www.roblox.com/games/3090230888",
   },
   {
-    title: "Visulie",
-    subtitle: "Comprehensive Animation Suite",
-    description: "Animation Editor",
+    title: "sys.break()",
+    subtitle: "Terminal Style Text-Based RTS",
+    description: `
+      A gamejam project prioritizing user interfaces and feel. Uses string manipulation, parsing, and lexical
+      analysis as the core game mechanic. Players are required to race against time and determine the correct
+      inputs to reach the end.`,
     image: testimg,
-    tags: [],
-    caption: "2023-Present",
-    link: "",
+    tags: ["Luau", "Roblox Studio", "Team Gamejam Project"],
+    caption: "2023",
+    link: "https://www.roblox.com/games/137695637382314",
   },
 ]
 
