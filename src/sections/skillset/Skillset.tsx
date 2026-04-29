@@ -168,7 +168,7 @@ function Skillset() {
               gap: "1.5rem",
             }}
           >
-            <h3>Software and Technology</h3>
+            <h3>Technology</h3>
             <div
               style = {{
                 flexWrap: "wrap",

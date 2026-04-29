@@ -15,7 +15,7 @@ export function useFadeInOnScroll() {
           observer.disconnect(); // only animate once
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.175 }
     );
 
     observer.observe(element);
