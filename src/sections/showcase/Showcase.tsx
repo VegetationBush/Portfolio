@@ -3,6 +3,13 @@ import type { ShowcaseItemProps } from "./components/ShowcaseItem";
 
 import testimg from "@/assets/testimg.png"
 
+import persplexive from "./images/Persplexive.png"
+import bloxroyale from "./images/BloxRoyale.png"
+import sysbreak from "./images/sys.break().png"
+import fps from "./images/fps.png"
+import pocketrift from "./images/pocketrift.png"
+import visulie from "./images/visulie.png"
+
 const showcaseItems: ShowcaseItemProps[] = [
   {
     title: "Visulie",
@@ -11,20 +18,21 @@ const showcaseItems: ShowcaseItemProps[] = [
       `A comprehensive animation software that aims to provide a seamless experience to create runtime visual
       and scriptable effects. Users can use the built-in editor to create, import, and serialize animation
       data, which can be run through a custom written interpreter for performant, real-time playback.`,
-    image: testimg,
-    tags: ["Luau", "Roblox Studio", "AdobeXD", "Solo Project"],
-    highlights: ["100+ Sales", "$1000+ CAD Revenue"],
-    caption: "2023 - Present",
+    image: visulie,
+    tags: ["Luau", "Roblox Studio", "AdobeXD", "Solo Project", "Actively Managed"],
+    highlights: ["150+ Sales", "$1500+ CAD Revenue", "#1 Ranked Google Search"],
+    caption: "2022 - Present",
     link: "https://devforum.roblox.com/t/3582453",
   },
   {
     title: "FPS",
     subtitle: "Incremental Simulation Game",
-    description: `A completed incremental game with curated player progression. The gameplay loop focuses on
-      gradual growth, resource management, and strategic upgrades, creating a satisfying progression system
-      that keeps players engaged.`,
-    image: testimg,
-    highlights: ["100K+ Plays", "100+ Peak CCU"],
+    description:
+      `A completed incremental game with curated player progression. The gameplay loop focuses on gradual
+      growth, resource management, and strategic upgrades, creating a satisfying progression system that
+      keeps players engaged.`,
+    image: fps,
+    highlights: ["100K+ Plays", "100+ Peak CCU", "Paid Role"],
     tags: ["Luau", "Roblox Studio", "Musescore", "Team Project"],
     caption: "2022-2023",
     link: "https://www.roblox.com/games/11352614810",
@@ -32,12 +40,11 @@ const showcaseItems: ShowcaseItemProps[] = [
   {
     title: "Pocket Rift",
     subtitle: "Multiplayer Experience Prioritizing Emergent Gameplay",
-    description: `
-      An in-dev multiplayer game built with a complex web of interconnected game mechanics designed to produce
+    description:
+      `An in-dev multiplayer game built with a complex web of interconnected game mechanics designed to produce
       rich, replayable, and emergent gameplay. The codebase is extensible, robust, and data-oriented, leveraging
-      the use of state propagation and context to produce procedural behaviuor.
-      `,
-    image: testimg,
+      the use of state propagation and context to produce procedural behaviour.`,
+    image: pocketrift,
     tags: ["Luau", "Roblox Studio", "Musescore", "Audacity", "Krita", "AdobeXD", "Solo Project"],
     caption: "2023-Present",
     link: "https://www.roblox.com/games/3090230888",
@@ -45,14 +52,38 @@ const showcaseItems: ShowcaseItemProps[] = [
   {
     title: "sys.break()",
     subtitle: "Terminal Style Text-Based RTS",
-    description: `
-      A gamejam project prioritizing user interfaces and feel. Uses string manipulation, parsing, and lexical
+    description:
+      `A gamejam project prioritizing user interfaces and feel. Uses string manipulation, parsing, and lexical
       analysis as the core game mechanic. Players are required to race against time and determine the correct
       inputs to reach the end.`,
-    image: testimg,
-    tags: ["Luau", "Roblox Studio", "Team Gamejam Project"],
+    image: sysbreak,
+    tags: ["Luau", "Roblox Studio", "Collaborative Gamejam"],
     caption: "2023",
     link: "https://www.roblox.com/games/137695637382314",
+  },
+  {
+    title: "Blox Royale",
+    subtitle: "Player vs. Player Tower Defense",
+    description:
+      `Commissioned to create 3D assets for an online game with over 25 million lifetime visits. Delivered on
+      schedule, adhering to product specifications and providing consistent communication.`,
+    highlights: ["25M+ Lifetime Visits", "Paid Contract"],
+    image: bloxroyale,
+    tags: ["Blender"],
+    caption: "2020",
+    link: "https://www.roblox.com/games/4805544631",
+  },
+  {
+    title: "Persplexive!",
+    subtitle: "Visually Expressive Skit",
+    description:
+      `Worked as the lead programmer in a team, developing a short narrative-driven experience with a focus on
+      visual polish and smooth gameplay. Designed dialogue systems and structured gameplay progression to ensure
+      a cohesive player experience.`,
+    image: persplexive,
+    tags: ["Roblox Studio", "Luau", "Musescore", "Collaborative Gamejam"],
+    caption: "2024",
+    link: "https://www.roblox.com/games/16144754329",
   },
 ]
 
