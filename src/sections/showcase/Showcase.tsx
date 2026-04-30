@@ -1,8 +1,6 @@
 import ShowcaseItem from "./components/ShowcaseItem";
 import type { ShowcaseItemProps } from "./components/ShowcaseItem";
 
-import testimg from "@/assets/testimg.png"
-
 import persplexive from "./images/Persplexive.png"
 import bloxroyale from "./images/BloxRoyale.png"
 import sysbreak from "./images/sys.break().png"
