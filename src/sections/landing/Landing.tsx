@@ -5,7 +5,6 @@ import MarqueeArray from "./components/MarqueeArray"
 export default function Landing() {
   return (
     <div
-      className = "section"
       style = {{
         width: "100%",
         position: "relative",

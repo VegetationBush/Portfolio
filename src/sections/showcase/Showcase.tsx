@@ -7,6 +7,7 @@ import sysbreak from "./images/sys.break().png"
 import fps from "./images/fps.png"
 import pocketrift from "./images/pocketrift.png"
 import visulie from "./images/visulie.png"
+import musescore from "./images/musescore.png"
 
 const showcaseItems: ShowcaseItemProps[] = [
   {
@@ -19,7 +20,7 @@ const showcaseItems: ShowcaseItemProps[] = [
     image: visulie,
     tags: ["Luau", "Roblox Studio", "AdobeXD", "Solo Project", "Actively Managed"],
     highlights: ["150+ Sales", "$1500+ CAD Revenue", "#1 Ranked Google Search"],
-    caption: "2022 - Present",
+    caption: "2021 - Present",
     link: "https://devforum.roblox.com/t/3582453",
   },
   {
@@ -83,33 +84,51 @@ const showcaseItems: ShowcaseItemProps[] = [
     caption: "2024",
     link: "https://www.roblox.com/games/16144754329",
   },
+  {
+    title: "Compositions",
+    subtitle: "My Original Soundtracks",
+    description:
+      `My passion for music has been with me ever since the initial spark. Since then, I learned how to play many
+      more instruments and started exploring music composition across genres and instruments. My portfolio on
+      MuseScore showcases many of the original pieces I have created. Feel free to take a look!`,
+    image: musescore,
+    tags: ["Musescore"],
+    caption: "2018-Present",
+    link: "https://musescore.com/user/37216317",
+  },
 ]
 
 function Showcase() {
   return (
     <div
-      className = "fade-in-container"
+      className = "section-container"
       style = {{
-        width: "100%",
-        
-        display: "flex",
-        flexDirection: "column",
-        padding: "5rem 0rem",
-        gap: "4rem"
+        backgroundColor: "var(--background-secondary)",
       }}
     >
-      <h2>Showcase</h2>
+      <div
+        className = "section-item fade-in-container"
+        style = {{
+          width: "100%",
+          
+          display: "flex",
+          flexDirection: "column",
+          gap: "4rem"
+        }}
+      >
+        <h2>Showcase</h2>
 
-      <div style = {{
-        display: "grid",
-        gridTemplateColumns: "repeat(auto-fit, minmax(22.5rem, 1fr))",
-        gap: "1rem",
-      }}>
-        {showcaseItems.map((item, index) => {
-          return (
-            <ShowcaseItem key = {index} {...item} />
-          )
-        })}
+        <div style = {{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(22.5rem, 1fr))",
+          gap: "1rem",
+        }}>
+          {showcaseItems.map((item, index) => {
+            return (
+              <ShowcaseItem key = {index} {...item} />
+            )
+          })}
+        </div>
       </div>
     </div>
   )

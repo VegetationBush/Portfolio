@@ -64,7 +64,7 @@ const Intro = () => {
         }`}
         {`@keyframes introMoveTitleLeft {
           0%   { transform: translate(-50%, -70%) translateY(0%); }
-          100% { transform: translate(0%, -70%) translateY(0%); left: 0px}
+          100% { transform: translate(10rem, -70%) translateY(0%); left: 0px}
         }`}
 
         {`@keyframes introMoveSubtitle {
@@ -73,7 +73,7 @@ const Intro = () => {
         }`}
         {`@keyframes introMoveSubtitleLeft {
           0%   { transform: translate(-50%, 50%); }
-          100% { transform: translate(2.5%, 50%); left: 0px}
+          100% { transform: translate(10.5rem, 50%); left: 0px}
         }`}
       </style>
     </div>

@@ -80,114 +80,116 @@ const softwareTechSkills: SkillCardProps[] = [
 
 function Skillset() {
   return (
-    <div
-      className = "fade-in-container"
-      style = {{
-        width: "100%",
+    <div className = "section-container">
+      <div
+        className = "section-item fade-in-container"
+        style = {{
+          width: "100%",
 
-        display: "grid",
-        flexDirection: "column",
-        padding: "5rem 0rem",
-        gap: "3rem",
-      }}
-    >
-      <h2>Experience</h2>
-
-      <div style = {{
-        display: "flex",
-        flexDirection: "column",
-        gap: "1.5rem",
-      }}>
-
-        {/* legend */}
-        <div style = {{
-          width: "10rem",
-          minHeight: "2.5rem",
-
-          backgroundColor: "var(--background-tertiary)",
-
-          borderRadius: "0.75rem",
-          padding: "0.5rem 1rem",
-          outline: "2px inset var(--accent)",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          textWrap: "nowrap",
-        }}>
-          <h4>Strongest Skills</h4>
-        </div>
+          display: "grid",
+          flexDirection: "column",
+          gap: "3rem",
+        }}
+      >
+        <h2>Experience</h2>
 
         <div style = {{
           display: "flex",
           flexDirection: "column",
           gap: "1.5rem",
-          boxSizing: "border-box",
         }}>
 
-          {/* languages */}
-          <Card
-            className = "fade-in-container"
-            style = {{
-              display: "flex",
-              flexDirection: "column",
+          {/* legend */}
+          <div style = {{
+            width: "10rem",
+            minHeight: "2.5rem",
 
-              padding: "2.5rem",
-              gap: "1.5rem",
-            }}
-          >
-            <h3>Languages</h3>
-            <div
+            backgroundColor: "var(--background-tertiary)",
+
+            borderRadius: "0.75rem",
+            padding: "0.5rem 1rem",
+            outline: "2px inset var(--accent)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            textWrap: "nowrap",
+          }}>
+            <h4>Strongest Skills</h4>
+          </div>
+
+          <div style = {{
+            display: "flex",
+            flexDirection: "column",
+            gap: "1.5rem",
+            boxSizing: "border-box",
+          }}>
+
+            {/* languages */}
+            <Card
+              className = "fade-in-container"
               style = {{
-                flexWrap: "wrap",
-                flexDirection: "row",
                 display: "flex",
-                gap: "0.75rem",
+                flexDirection: "column",
+
+                padding: "2.5rem",
+                gap: "1.5rem",
               }}
             >
-              {languageSkills.map((item, index) => {
-                return (
-                  <SkillCard
-                    key = {index}
-                    {...item}
-                  />
-                )
-              })}
-            </div>
-          </Card>
+              <h3>Languages</h3>
+              <div
+                style = {{
+                  flexWrap: "wrap",
+                  flexDirection: "row",
+                  display: "flex",
+                  gap: "0.75rem",
+                }}
+              >
+                {languageSkills.map((item, index) => {
+                  return (
+                    <SkillCard
+                      key = {index}
+                      {...item}
+                    />
+                  )
+                })}
+              </div>
+            </Card>
 
-          {/* tech and software */}
-          <Card
-            className = "fade-in-container"
-            style = {{
-              display: "flex",
-              flexDirection: "column",
-              padding: "2.5rem",
-              gap: "1.5rem",
-            }}
-          >
-            <h3>Technology</h3>
-            <div
+            {/* tech and software */}
+            <Card
+              className = "fade-in-container"
               style = {{
-                flexWrap: "wrap",
-                flexDirection: "row",
                 display: "flex",
-                gap: "0.75rem",
+                flexDirection: "column",
+                padding: "2.5rem",
+                gap: "1.5rem",
               }}
             >
-              {softwareTechSkills.map((item, index) => {
-                return (
-                  <SkillCard
-                    key = {index}
-                    {...item}
-                  />
-                )
-              })}
-            </div>
-          </Card>
+              <h3>Technology</h3>
+              <div
+                style = {{
+                  flexWrap: "wrap",
+                  flexDirection: "row",
+                  display: "flex",
+                  gap: "0.75rem",
+                }}
+              >
+                {softwareTechSkills.map((item, index) => {
+                  return (
+                    <SkillCard
+                      key = {index}
+                      {...item}
+                    />
+                  )
+                })}
+              </div>
+            </Card>
+          </div>
         </div>
+        
       </div>
-      
     </div>
+    
   )
 }
 

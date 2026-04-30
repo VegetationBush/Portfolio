@@ -1,11 +1,14 @@
 import "@/index.css"
 import "@/theme.css"
 import "@/layout.css"
+
 import Navbar from "@/components/Navbar"
-import AboutMe from "@/sections/aboutMe/AboutMe"
+import AboutMe from "@/sections/about/About"
 import Landing from "@/sections/landing/Landing"
 import Skillset from "@/sections/skillset/Skillset"
 import Showcase from "./sections/showcase/Showcase"
+import Contact from "./sections/contact/Contact"
+
 import FadeInObserver from "./components/FadeInObserver"
 import { useEffect, useRef } from "react"
 
@@ -37,17 +40,16 @@ function App() {
     }}>
       <FadeInObserver/>
       <Navbar/>
+      
       <div
         ref = {scrollRef}
-        className = "page-padding-container"
         style = {{
           position: "relative",
           width: "100vw",
-          maxWidth: "85rem",
           flex: 1,
           
+          justifyItems: "center",
           flexDirection: "column",
-          margin: "0 auto",
           contain: "paint",
           scrollbarWidth: "none",
         }}
@@ -56,6 +58,7 @@ function App() {
         <AboutMe/>
         <Skillset/>
         <Showcase/>
+        <Contact/>
       </div>
     </div>
   )

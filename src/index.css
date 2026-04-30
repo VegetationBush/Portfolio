@@ -108,6 +108,16 @@ p {
   }
 }
 
+@media (min-width: 2000px) {
+  html {
+    font-size: clamp(
+    16px,
+    calc(16px + (100vw - 2000px) / 100),
+    24px
+  );
+  }
+}
+
 #root, #__next {
   isolation: isolate;
 }
