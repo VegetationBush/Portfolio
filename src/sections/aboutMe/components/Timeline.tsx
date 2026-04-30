@@ -29,7 +29,7 @@ const Timeline = () => {
         width: "100%",
         fontWeight: "600",
       }}>
-        Early Career
+        Early Career Milestones
       </h3>
       
       {/* timeline inforgraphic */}
