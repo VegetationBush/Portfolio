@@ -1,4 +1,4 @@
-import { useState, useEffect, type ReactElement } from "react";
+import type { ReactElement } from "react";
 import Marquee from "./Marquee";
 
 const images = import.meta.glob<string>('/src/sections/landing/components/marqueeImages/*.{png,jpg,jpeg}', {
@@ -25,64 +25,59 @@ const listToElements = (list: string[]): ReactElement[] => {
 }
 
 const MarqueeArray = () => {
-  const [show, setShow] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShow(true);
-    }, 1500);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (!show) return null;
-  
   return (
-    <div
-      className = "intro-marquee-array"
-      style = {{
-        position: "absolute",
-        right: 0,
-        height: "100%",
+    <div style = {{
+      position: "relative",
+      height: "100%",
+      width: "100%",
 
-        WebkitMaskImage: "linear-gradient(to right, transparent, black 35%, black 65%, transparent)",
-        overflow: "hidden",
-        animation: "marquee-array-fade 5s ease-in forwards",
-      }}
-    >
-      <div style = {{
-        height: "100%",
-        width: "100%",
+      justifyItems: "center",
+    }}>
+      <div
+        className = "intro-marquee-array"
+        style = {{
+          position: "relative",
+          height: "100%",
 
-        display: "flex",
-        flexDirection: "column",
-        gap: "1rem",
-        
-        transform: "rotate(-35deg)",
-        transformOrigin: "top left",
-      }}>
-        {
-          Array.from({ length: 7 }, (_, i) => (
-            <div
-              key = {i}
-              style = {{
-                position: "relative",
+          WebkitMaskImage: "linear-gradient(to right, transparent, black 35%, black 65%, transparent)",
+          overflow: "hidden",
+          animation: "marquee-array-fade 3s ease-in forwards",
+        }}
+      >
+        <div style = {{
+          height: "100%",
+          width: "100%",
 
-                // since the container is rotated 35 degrees from the top left, each element must be adjusted so aligns vertically, leaving no gaps
-                right: `${ELEMENT_SIZE_REM * (i + 1)}rem`,
-              }}
-            >
-              <Marquee items = {listToElements(itemList)} duration = {10 + i * 3}/>
-            </div>
-          ))
-        }
+          display: "flex",
+          flexDirection: "column",
+          gap: "1rem",
+          
+          transform: "rotate(-35deg)",
+          transformOrigin: "top left",
+        }}>
+          {
+            Array.from({ length: 7 }, (_, i) => (
+              <div
+                key = {i}
+                style = {{
+                  position: "relative",
+
+                  // since the container is rotated 35 degrees from the top left, each element must be adjusted so aligns vertically, leaving no gaps
+                  right: `${ELEMENT_SIZE_REM * (i + 1)}rem`,
+                }}
+              >
+                <Marquee items = {listToElements(itemList)} duration = {10 + i * 3}/>
+              </div>
+            ))
+          }
+        </div>
+        <style>
+          {`@keyframes marquee-array-fade {
+            0%   { opacity: 0.25 }
+            100% { opacity: 0.1 }
+          }`}
+        </style>
       </div>
-      <style>
-        {`@keyframes marquee-array-fade {
-          0%   { opacity: 1 }
-          100% { opacity: 0.27 }
-        }`}
-      </style>
     </div>
   )
 }

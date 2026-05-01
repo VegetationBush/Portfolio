@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-const ANIMATION_DELAY_MS = 3000;
+const ANIMATION_DELAY_MS = 1000;
 
 const ScrollTip = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -11,7 +11,7 @@ const ScrollTip = () => {
       containerRef.current.style.animation = "none"
       containerRef.current.offsetHeight
       containerRef.current.style.animationDelay = "0.5"
-      containerRef.current.style.animation = "scrollTipFadeOut 0.3s ease-in-out forwards";
+      containerRef.current.style.animation = "scrollTipFadeOut 0.8s ease-in-out forwards";
     };
     const scrollTarget = containerRef.current?.parentElement?.parentElement ?? window
 
@@ -51,12 +51,12 @@ const ScrollTip = () => {
       Scroll down
       <style>
         {`@keyframes scrollTipFadeIn {
-          0%   { transform: translate(-50%, -2rem); opacity: 0; }
+          0%   { transform: translate(-50%, -3rem); opacity: 0; }
           100% { transform: translate(-50%, 0px); opacity: 1; }
         }`}
         {`@keyframes scrollTipFadeOut {
           0%   { transform: translate(-50%, 0px); opacity: 1; }
-          100% { transform: translate(-50%, 2rem); opacity: 0; }
+          100% { transform: translate(-50%, 3rem); opacity: 0; }
         }`}
       </style>
     </div>

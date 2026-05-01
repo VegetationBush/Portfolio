@@ -24,7 +24,7 @@ function App() {
     const timer = setTimeout(() => {
       el.style.overflowY = "auto";
       el.style.overflowX = "clip"; // NO horizontal scrolling
-    }, 2000);
+    }, 1000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -48,7 +48,6 @@ function App() {
           width: "100vw",
           flex: 1,
           
-          justifyItems: "center",
           flexDirection: "column",
           contain: "paint",
           scrollbarWidth: "none",

@@ -6,11 +6,11 @@ interface IconProps {
   style?: React.CSSProperties,
 }
 
-const IconSVG = ({ svg, color, width, height, style }: IconProps) => {
+const IconSVG = ({ svg, color = "var(--primary)", width, height, style }: IconProps) => {
   return (
     <div
-      dangerouslySetInnerHTML={{ __html: svg }}
-      style={{
+      dangerouslySetInnerHTML = {{ __html: svg }}
+      style = {{
         width: width,
         height: height,
         color: color,

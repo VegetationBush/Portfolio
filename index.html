@@ -8,6 +8,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
     <title>portfolio</title>
+    <script>
+      // run this to set the theme to dom before the first render to prevent flickering if the theme is not the default
+      const theme = localStorage.getItem("theme") || "dark";
+      document.documentElement.classList.toggle("light", theme === "light");
+    </script>
   </head>
   <body>
     <div id="root"></div>

@@ -13,7 +13,6 @@ function About() {
         className = "split-container section-item fade-in-container"
         style = {{
           position: "relative",
-          minHeight: "var(--content-height)",
           width: "100%",
           
           alignContent: "center",

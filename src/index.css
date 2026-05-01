@@ -113,7 +113,7 @@ p {
     font-size: clamp(
     16px,
     calc(16px + (100vw - 2000px) / 100),
-    24px
+    28px
   );
   }
 }

@@ -27,8 +27,8 @@
 
 :root.light {
   --background: oklch(0.985 0 0);
-  --background-secondary: oklch(0.975 0 0);
-  --background-tertiary: oklch(0.96 0 0);
+  --background-secondary: oklch(0.9725 0 0);
+  --background-tertiary: oklch(0.9575 0 0);
   --background-hover: oklch(0.94 0 0);
   --primary: oklch(0.205 0 0);
   --secondary: oklch(0.325 0 0);
@@ -49,4 +49,16 @@
 * {
   /* transition every property that gets affected by theme */
   transition: var(--transition);
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.background-effect {
+  background: linear-gradient(-45deg, var(--background), var(--background-tertiary));
+  background-size: 400% 400%;
+  animation: gradientShift 3s ease infinite;
 }

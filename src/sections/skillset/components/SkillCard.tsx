@@ -34,8 +34,7 @@ const SkillCard = ({ svg, svg_light, label, isExperienced = false }: SkillCardPr
           height = "1.5rem"
         />
       </span>
-      <p>{label}
-      </p>
+      <p>{label}</p>
     </PerspectiveCard>
   )
 }

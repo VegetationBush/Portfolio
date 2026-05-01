@@ -1,4 +1,3 @@
-import "@/components/Button.tsx"
 import "./intro.css"
 
 const Intro = () => {
@@ -9,73 +8,48 @@ const Intro = () => {
         width: "100%",
         position: "absolute",
         zIndex: 100,
+        alignContent: "center",
+        justifyContent: "center",
       }}
     >
-      <div
-        className = "intro-title"
-        style = {{
-          fontWeight: 600,
-          color: "var(--primary)",
-          textWrap: "nowrap",
-          userSelect: "none",
+      <div style = {{
+        position: "relative",
 
-          position: "absolute",
-          left: "50%",
-          top: "50%",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+      }}>
+        <div
+          className = "intro-title"
+          style = {{
+            fontWeight: 600,
+            color: "var(--primary)",
+            textWrap: "nowrap",
+            userSelect: "none",
+            lineHeight: 1,
 
-          animation: `
-            introMoveTitle 0.8s ease-out,
-            introMoveTitleLeft 2s ease-in-out
-          `,
-          animationDelay: "0s, 2s",
-          animationFillMode: "forwards",
-        }}
-      >
-        Hi, I'm Hans.
+            animation: "introMoveTitle 0.8s ease-out forwards",
+            animationDelay: "0s",
+          }}
+        >
+          Hi, I'm Hans.
+        </div>
+        <div
+          className = "intro-subtitle"
+          style = {{
+            fontWeight: 400,
+            color: "var(--secondary)",
+            textWrap: "nowrap",
+            opacity: 0,
+            userSelect: "none",
+
+            animation: "introMoveSubtitle 0.8s ease-out forwards",
+            animationDelay: "0.5s",
+          }}
+        >
+          Thanks for checking in!
+        </div>
       </div>
-      <div
-        className = "intro-subtitle"
-        style = {{
-          fontWeight: 400,
-          color: "var(--secondary)",
-          textWrap: "nowrap",
-          opacity: 0,
-          userSelect: "none",
-
-          position: "absolute",
-          left: "50%",
-          top: "50%",
-
-          animation: `
-            introMoveSubtitle 0.8s ease-out,
-            introMoveSubtitleLeft 2s ease-in-out
-          `,
-          animationDelay: "1s, 2s",
-          animationFillMode: "forwards",
-        }}
-      >
-        Thanks for checking in!
-      </div>
-
-      <style>
-        {`@keyframes introMoveTitle {
-          0%   { transform: translate(-50%, 0%); opacity: 0 }
-          100% { transform: translate(-50%, -70%); opacity: 1 }
-        }`}
-        {`@keyframes introMoveTitleLeft {
-          0%   { transform: translate(-50%, -70%) translateY(0%); }
-          100% { transform: translate(10rem, -70%) translateY(0%); left: 0px}
-        }`}
-
-        {`@keyframes introMoveSubtitle {
-          0%   { transform: translate(-50%, 100%); opacity: 0 }
-          100% { transform: translate(-50%, 50%); opacity: 1 }
-        }`}
-        {`@keyframes introMoveSubtitleLeft {
-          0%   { transform: translate(-50%, 50%); }
-          100% { transform: translate(10.5rem, 50%); left: 0px}
-        }`}
-      </style>
     </div>
   );
 };
