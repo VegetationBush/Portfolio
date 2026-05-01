@@ -9,7 +9,7 @@ import localtion_img from "@/assets/location.svg?raw"
 import phone_img from "@/assets/phone.svg?raw"
 
 const contactItems: ContactItemProps[] = [
-  {svg: phone_img, label: "647-862-5138"},
+  {svg: phone_img, label: "(647) 862-5138"},
   {svg: github_img, label: "github.com/VegetationBush"},
   {svg: email_img, label: "hans.yangchenghao@gmail.com"},
   {svg: localtion_img, label: "Toronto, Ontario"},
