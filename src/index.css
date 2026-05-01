@@ -108,11 +108,11 @@ p {
   }
 }
 
-@media (min-width: 2000px) {
+@media (min-width: 1536px) {
   html {
     font-size: clamp(
     16px,
-    calc(16px + (100vw - 2000px) / 100),
+    calc(16px + (100vw - 1536px) / 150),
     28px
   );
   }

@@ -1,0 +1,19 @@
+.marquee-array-container {
+  --marquee-item-size: 11rem;
+  gap: calc(var(--marquee-item-size) / 11);
+}
+.marquee-array-item {
+  width: var(--marquee-item-size);
+  height: var(--marquee-item-size);
+}
+
+@media (max-width: 768px) {
+  .marquee-array-container {
+    --marquee-item-size: 7rem;
+  }
+}
+@media (min-width: 1536px) {
+  .marquee-array-container {
+    --marquee-item-size: calc(11rem + (100vw - 1536px) / 20);
+  }
+}
