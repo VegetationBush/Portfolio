@@ -13,7 +13,7 @@ const Navbar = () => {
   
   return (
     <nav
-      style={{
+      style = {{
         position: "relative",
         width: "100%",
         height: "var(--navbar-height)",
@@ -57,7 +57,7 @@ const Navbar = () => {
         <Button
           label = "Resume"
           svg = {file_icon}
-          onClick = {() => window.open(`${import.meta.env.BASE_URL}/HansYang-Resume.pdf`, "_blank")}
+          onClick = {() => window.open(`/HansYang-Resume.pdf`, "_blank")}
         />
       </div>
 
