@@ -1,7 +1,7 @@
 import type { ReactElement } from "react";
 import Marquee from "./Marquee";
 
-const images = import.meta.glob<string>('/src/sections/landing/components/marqueeImages/*.{png,jpg,jpeg}', {
+const images = import.meta.glob<string>('/src/sections/landing/components/marqueeImages/*.{png,jpg,jpeg,avif}', {
   eager: true,
   import: 'default',
 });

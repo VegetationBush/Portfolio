@@ -22,8 +22,8 @@ const Button: React.FC<CustomButtonProps> = ({onClick, label, svg, size = "small
   return (
     <button
       {...props}
-      onClick={onClick}
-      style={{
+      onClick = {onClick}
+      style = {{
         borderRadius: "0.75rem",
         cursor: "pointer",
         outline: "none",
