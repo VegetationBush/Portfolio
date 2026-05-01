@@ -57,7 +57,7 @@ const Navbar = () => {
         <Button
           label = "Resume"
           svg = {file_icon}
-          onClick = {() => window.open("/Portfolio/HansYang-Resume.pdf", "_blank")}
+          onClick = {() => window.open(`${import.meta.env.BASE_URL}/HansYang-Resume.pdf`, "_blank")}
         />
       </div>
 
