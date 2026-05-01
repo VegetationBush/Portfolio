@@ -10,10 +10,10 @@ import phone_img from "@/assets/phone.svg?raw"
 
 const contactItems: ContactItemProps[] = [
   {svg: phone_img, label: "647-862-5138"},
-  {svg: github_img, label: "https://github.com/VegetationBush"},
+  {svg: github_img, label: "github.com/VegetationBush"},
   {svg: email_img, label: "hans.yangchenghao@gmail.com"},
   {svg: localtion_img, label: "Toronto, Ontario"},
-  {svg: linkedin_img, label: "https://www.linkedin.com/in/hans-yang-a2096738b/"},
+  {svg: linkedin_img, label: "linkedin.com/in/hans-yang-a2096738b/"},
 ]
 
 function Contact() {
