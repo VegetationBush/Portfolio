@@ -2,7 +2,7 @@ import "./timeline.css"
 import Card from "@/components/Card"
 
 const timelineItems: ({year: string, description: string})[] = [
-  {year: "2018", description: "A flash of inspiration. Composed my first peice of music!"},
+  {year: "2018", description: "A flash of inspiration. Composed my first piece of music!"},
   {year: "2019", description: "Began my game development journey and wrote my first line of real code."},
   {year: "2020", description: "Began experimenting with various software. Completed my very first paid commision."},
   {year: "2021", description: "Released my first successful software product."},
