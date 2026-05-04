@@ -20,24 +20,6 @@ import r from "./languageImages/r.svg?raw"
 import typescript from "./languageImages/typescript.svg?raw"
 import vba from "./languageImages/vba.svg?raw"
 
-const languageSkills: SkillCardProps[] = [
-  { svg: c, label: "C" },
-  { svg: css_icon, label: "CSS", isExperienced: true },
-  { svg: html_icon, label: "HTML", isExperienced: true },
-  { svg: java, label: "Java" },
-  { svg: javascript, label: "JavaScript", isExperienced: true },
-  { svg: latex, svg_light: latex_light, label: "LaTeX" },
-  { svg: lua, label: "Lua", isExperienced: true },
-  { svg: luau, label: "Luau", isExperienced: true },
-  { svg: love2d, label: "Love2D" },
-  { svg: markdown, svg_light: markdown_light, label: "Markdown", isExperienced: true },
-  { svg: matlab, label: "MATLAB" },
-  { svg: python, label: "Python", isExperienced: true },
-  { svg: r, label: "R" },
-  { svg: typescript, label: "Typescript", isExperienced: true },
-  { svg: vba, label: "VBA" },
-]
-
 import adobexd from "./techImages/adobexd.svg?raw"
 import audacity from "./techImages/audacity.svg?raw"
 import blender from "./techImages/blender.svg?raw"
@@ -58,24 +40,59 @@ import vercel_light from "./techImages/vercel-light.svg?raw"
 import vite from "./techImages/vite.svg?raw"
 import vscode from "./techImages/vscode.svg?raw"
 
-const softwareTechSkills: SkillCardProps[] = [
-  { svg: adobexd, label: "AdobeXD" },
-  { svg: audacity, label: "Audacity" },
-  { svg: blender, label: "Blender" },
-  { svg: canva, label: "Canva" },
-  { svg: excel, label: "Excel" },
-  { svg: git, label: "Git", isExperienced: true },
-  { svg: github, svg_light: github_light, label: "Github", isExperienced: true  },
-  { svg: krita, label: "Krita" },
-  { svg: musescore, label: "MuseScore Studio", isExperienced: true },
-  { svg: nodejs, label: "Node.js", isExperienced: true },
-  { svg: overleaf, label: "Overleaf" },
-  { svg: paintdotnet, label: "paint.net" },
-  { svg: react, label: "React", isExperienced: true },
-  { svg: roblox_studio, label: "Roblox Studio", isExperienced: true },
-  { svg: vercel, svg_light: vercel_light, label: "Vercel" },
-  { svg: vite, label: "Vite" },
-  { svg: vscode, label: "VS Code", isExperienced: true  },
+const skillCategories: { title: string, items: SkillCardProps[] }[] = [
+  {
+    title: "Programming Languages",
+    items: [
+      { svg: c, label: "C" },
+      { svg: java, label: "Java" },
+      { svg: javascript, label: "JavaScript", isExperienced: true },
+      { svg: lua, label: "Lua", isExperienced: true },
+      { svg: luau, label: "Luau", isExperienced: true },
+      { svg: love2d, label: "Love2D" },
+      { svg: matlab, label: "MATLAB" },
+      { svg: python, label: "Python", isExperienced: true },
+      { svg: r, label: "R" },
+      { svg: typescript, label: "Typescript", isExperienced: true },
+      { svg: vba, label: "VBA" },
+    ],
+  },
+  {
+    title: "Web Development",
+    items: [
+      { svg: css_icon, label: "CSS", isExperienced: true },
+      { svg: html_icon, label: "HTML", isExperienced: true },
+      { svg: nodejs, label: "Node.js", isExperienced: true },
+      { svg: vercel, svg_light: vercel_light, label: "Vercel" },
+      { svg: vite, label: "Vite" },
+      { svg: vscode, label: "VS Code", isExperienced: true  },
+    ],
+  },
+  {
+    title: "Development Tools",
+    items: [
+      { svg: excel, label: "Excel" },
+      { svg: git, label: "Git", isExperienced: true },
+      { svg: github, svg_light: github_light, label: "Github", isExperienced: true  },
+      { svg: latex, svg_light: latex_light, label: "LaTeX" },
+      { svg: markdown, svg_light: markdown_light, label: "Markdown", isExperienced: true },
+      { svg: overleaf, label: "Overleaf" },
+      { svg: react, label: "React", isExperienced: true },
+      { svg: roblox_studio, label: "Roblox Studio", isExperienced: true },
+    ],
+  },
+  {
+    title: "Creative Software",
+    items: [
+      { svg: adobexd, label: "AdobeXD" },
+      { svg: audacity, label: "Audacity" },
+      { svg: blender, label: "Blender" },
+      { svg: canva, label: "Canva" },
+      { svg: krita, label: "Krita" },
+      { svg: musescore, label: "MuseScore Studio", isExperienced: true },
+      { svg: paintdotnet, label: "paint.net" },
+    ],  
+  },
 ]
 
 function Skillset() {
@@ -96,7 +113,7 @@ function Skillset() {
         <div style = {{
           display: "flex",
           flexDirection: "column",
-          gap: "1.5rem",
+          gap: "1.75rem",
         }}>
 
           {/* legend */}
@@ -120,70 +137,44 @@ function Skillset() {
           <div style = {{
             display: "flex",
             flexDirection: "column",
-            gap: "1.5rem",
+            gap: "0.75rem",
             boxSizing: "border-box",
           }}>
 
-            {/* languages */}
-            <Card
-              className = "fade-in-container"
-              style = {{
-                display: "flex",
-                flexDirection: "column",
+            {skillCategories.map((category, index) => {
+              return (
+                <Card
+                  key = {index}
+                  className = "fade-in-container"
+                  style = {{
+                    display: "flex",
+                    flexDirection: "column",
 
-                padding: "2.5rem",
-                gap: "1.5rem",
-              }}
-            >
-              <h3>Languages</h3>
-              <div
-                style = {{
-                  flexWrap: "wrap",
-                  flexDirection: "row",
-                  display: "flex",
-                  gap: "0.75rem",
-                }}
-              >
-                {languageSkills.map((item, index) => {
-                  return (
-                    <SkillCard
-                      key = {index}
-                      {...item}
-                    />
-                  )
-                })}
-              </div>
-            </Card>
-
-            {/* tech and software */}
-            <Card
-              className = "fade-in-container"
-              style = {{
-                display: "flex",
-                flexDirection: "column",
-                padding: "2.5rem",
-                gap: "1.5rem",
-              }}
-            >
-              <h3>Technology</h3>
-              <div
-                style = {{
-                  flexWrap: "wrap",
-                  flexDirection: "row",
-                  display: "flex",
-                  gap: "0.75rem",
-                }}
-              >
-                {softwareTechSkills.map((item, index) => {
-                  return (
-                    <SkillCard
-                      key = {index}
-                      {...item}
-                    />
-                  )
-                })}
-              </div>
-            </Card>
+                    padding: "2.5rem",
+                    gap: "1.5rem",
+                  }}
+                >
+                  <h3>{category.title}</h3>
+                  <div
+                    style = {{
+                      flexWrap: "wrap",
+                      flexDirection: "row",
+                      display: "flex",
+                      gap: "0.75rem",
+                    }}
+                  >
+                    {category.items.map((item, index) => {
+                      return (
+                        <SkillCard
+                          key = {index}
+                          {...item}
+                        />
+                      )
+                    })}
+                  </div>
+                </Card>
+              )
+            })}
           </div>
         </div>
         
