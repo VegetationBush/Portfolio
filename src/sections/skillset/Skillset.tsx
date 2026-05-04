@@ -119,12 +119,12 @@ function Skillset() {
           {/* legend */}
           <div style = {{
             width: "10rem",
-            minHeight: "2.5rem",
+            height: "0rem",
 
             backgroundColor: "var(--background-tertiary)",
 
             borderRadius: "0.75rem",
-            padding: "0.5rem 1rem",
+            padding: "1.1rem 1.1rem",
             outline: "2px inset var(--accent)",
             display: "flex",
             alignItems: "center",

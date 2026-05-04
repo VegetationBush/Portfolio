@@ -20,7 +20,7 @@ const SkillCard = ({ svg, svg_light, label, isExperienced = false }: SkillCardPr
         borderRadius: "0.75rem",
         outline: isExperienced ? "2px inset var(--accent)" : "none",
 
-        padding: "0.5rem 0.75rem",
+        padding: "1.1rem 1.1rem",
         display: "flex",
         alignItems: "center",
         gap: "0.5rem",
@@ -30,8 +30,8 @@ const SkillCard = ({ svg, svg_light, label, isExperienced = false }: SkillCardPr
       <span>
         <IconSVG
           svg = {(svg_light == null || ThemeContext.theme == "dark") ? svg : svg_light }
-          width = "1.1rem"
-          height = "1.1rem"
+          width = "1.25rem"
+          height = "1.25rem"
         />
       </span>
       <p>{label}</p>
