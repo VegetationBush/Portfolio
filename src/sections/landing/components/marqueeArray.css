@@ -9,7 +9,7 @@
 
 @media (max-width: 768px) {
   .marquee-array-container {
-    --marquee-item-size: 7rem;
+    --marquee-item-size: 8rem;
   }
 }
 @media (min-width: 1536px) {
