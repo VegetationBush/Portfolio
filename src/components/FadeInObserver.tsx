@@ -13,7 +13,6 @@ export default function FadeInObserver() {
         }
       });
     }, {
-      scrollMargin: "200px",
       threshold: 0.15,
     });
 
