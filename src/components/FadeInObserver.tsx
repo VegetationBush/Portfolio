@@ -13,7 +13,7 @@ export default function FadeInObserver() {
         }
       });
     }, {
-      threshold: 0.15,
+      rootMargin: "20px",
     });
 
     items.forEach((item) => observer.observe(item));
