@@ -65,6 +65,7 @@ const Timeline = () => {
           {timelineItems.map((item, index) => {
             return (
               <div 
+                key = {index}
                 className = "fade-in-container"
                 style = {{
                   display: "flex",
@@ -75,7 +76,6 @@ const Timeline = () => {
 
                 {/* dot with line*/}
                 <div
-                  key = {index}
                   style = {{
                     position: "relative",
                     textAlign: "center",
@@ -102,7 +102,6 @@ const Timeline = () => {
 
                 {/* content */}
                 <div
-                  key = {index}
                   style = {{
                     position: "relative",
                     flex: 1,

@@ -9,7 +9,7 @@ export default function FadeInObserver() {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
-          observer.unobserve(entry.target); // Optional: stop observing after it's visible
+          observer.unobserve(entry.target);
         }
       });
     }, {
