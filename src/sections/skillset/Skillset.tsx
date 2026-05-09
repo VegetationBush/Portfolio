@@ -17,6 +17,7 @@ import markdown_light from "./languageImages/markdown-light.svg?raw"
 import matlab from "./languageImages/matlab.svg?raw"
 import python from "./languageImages/python.svg?raw"
 import r from "./languageImages/r.svg?raw"
+import sql from "./languageImages/sql.svg?raw"
 import typescript from "./languageImages/typescript.svg?raw"
 import vba from "./languageImages/vba.svg?raw"
 
@@ -29,6 +30,7 @@ import git from "./techImages/git.svg?raw"
 import github from "./techImages/github.svg?raw"
 import github_light from "./techImages/github-light.svg?raw"
 import krita from "./techImages/krita.svg?raw"
+import mongodb from "./techImages/mongodb.svg?raw"
 import musescore from "./techImages/musescore.svg?raw"
 import nodejs from "./techImages/nodejs.svg?raw"
 import overleaf from "./techImages/overleaf.svg?raw"
@@ -53,6 +55,7 @@ const skillCategories: { title: string, items: SkillCardProps[] }[] = [
       { svg: matlab, label: "MATLAB" },
       { svg: python, label: "Python", isExperienced: true },
       { svg: r, label: "R" },
+      { svg: sql, label: "SQL" },
       { svg: typescript, label: "Typescript", isExperienced: true },
       { svg: vba, label: "VBA" },
     ],
@@ -76,6 +79,7 @@ const skillCategories: { title: string, items: SkillCardProps[] }[] = [
       { svg: github, svg_light: github_light, label: "Github", isExperienced: true  },
       { svg: latex, svg_light: latex_light, label: "LaTeX" },
       { svg: markdown, svg_light: markdown_light, label: "Markdown", isExperienced: true },
+      { svg: mongodb, label: "mongoDB" },
       { svg: overleaf, label: "Overleaf" },
       { svg: react, label: "React", isExperienced: true },
       { svg: roblox_studio, label: "Roblox Studio", isExperienced: true },
