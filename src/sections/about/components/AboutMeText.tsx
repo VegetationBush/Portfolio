@@ -23,7 +23,7 @@ const AboutMeText = () => {
       >
         <h4>The Spark</h4>
         <p>
-          When I was still in elementary school, I quickly found myself immersed in the world of creation, startng my career with music
+          When I was still in elementary school, I quickly found myself immersed in the world of creation, starting my career with music
           composition. I have since explored and developed various skills across multiple disciplines, from digital arts and game
           development, to design and software development.
         </p>
