@@ -1,7 +1,7 @@
 import IconSVG from "@/components/IconSVG";
 
 export interface ContactItemProps extends React.HTMLAttributes<HTMLDivElement> {
-  svg: string,
+  svg: React.ComponentType<React.SVGProps<SVGSVGElement>>,
   label: string,
 }
 

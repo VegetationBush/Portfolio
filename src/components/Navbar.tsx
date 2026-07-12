@@ -1,10 +1,10 @@
 import "@/styles/navbar.css"
 import Button from './Button';
 import Separator from './Separator';
-import git_brand from '@/assets/github-icon.svg?raw'
-import linkedin_icon from '@/assets/linkedin.svg?raw'
-import dark_light from '@/assets/dark-light.svg?raw'
-import file_icon from '@/assets/file-icon.svg?raw'
+import git_brand from '@/assets/github-icon.svg?react'
+import linkedin_icon from '@/assets/linkedin.svg?react'
+import dark_light from '@/assets/dark-light.svg?react'
+import file_icon from '@/assets/file-icon.svg?react'
 import { useTheme } from "@/ThemeProvider";
 
 const Navbar = () => {

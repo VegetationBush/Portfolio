@@ -1,28 +1,26 @@
 interface IconProps {
-  svg: string,
-  color?: string,
-  width?: string,
-  height?: string,
-  style?: React.CSSProperties,
+  svg: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  color?: string;
+  width?: string;
+  height?: string;
+  style?: React.CSSProperties;
 }
 
-const IconSVG = ({ svg, color = "var(--primary)", width, height, style }: IconProps) => {
+const IconSVG = ({ svg: Svg, color = "var(--primary)", width, height, style }: IconProps) => {
   return (
-    <div
-      dangerouslySetInnerHTML = {{ __html: svg }}
-      style = {{
-        width: width,
-        height: height,
-        color: color,
+    <Svg
+      style={{
+        width,
+        height,
+        color,
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-
         transition: "none",
         ...style,
       }}
     />
-  )
-}
+  );
+};
 
-export default IconSVG
+export default IconSVG;

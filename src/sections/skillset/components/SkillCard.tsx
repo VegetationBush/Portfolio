@@ -3,8 +3,8 @@ import IconSVG from "@/components/IconSVG";
 import { useTheme } from "@/ThemeProvider";
 
 export interface SkillCardProps extends React.HTMLAttributes<HTMLDivElement> {
-  svg: string,
-  svg_light?: string,
+  svg: React.ComponentType<React.SVGProps<SVGSVGElement>>,
+  svg_light?: React.ComponentType<React.SVGProps<SVGSVGElement>>,
   label: string,
   isExperienced?: boolean,
 }

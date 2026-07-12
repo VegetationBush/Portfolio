@@ -2,11 +2,11 @@ import Card from "@/components/Card"
 import ContactItem from "./components/ContactItem"
 import type { ContactItemProps } from "./components/ContactItem"
 
-import github_img from "@/assets/github-icon.svg?raw"
-import linkedin_img from "@/assets/linkedin.svg?raw"
-import email_img from "@/assets/email.svg?raw"
-import localtion_img from "@/assets/location.svg?raw"
-import phone_img from "@/assets/phone.svg?raw"
+import github_img from "@/assets/github-icon.svg?react"
+import linkedin_img from "@/assets/linkedin.svg?react"
+import email_img from "@/assets/email.svg?react"
+import localtion_img from "@/assets/location.svg?react"
+import phone_img from "@/assets/phone.svg?react"
 
 const contactItems: ContactItemProps[] = [
   {svg: phone_img, label: "(647) 862-5138"},

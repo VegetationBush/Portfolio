@@ -2,51 +2,59 @@ import SkillCard from "./components/SkillCard";
 import type { SkillCardProps } from "./components/SkillCard";
 import Card from "@/components/Card";
 
-import c from "./languageImages/c.svg?raw"
-import css_icon from "./languageImages/css.svg?raw"
-import html_icon from "./languageImages/html.svg?raw"
-import java from "./languageImages/java.svg?raw"
-import javascript from "./languageImages/javascript.svg?raw"
-import latex from "./languageImages/latex.svg?raw"
-import latex_light from "./languageImages/latex-light.svg?raw"
-import lua from "./languageImages/lua.svg?raw"
-import luau from "./languageImages/luau.svg?raw"
-import love2d from "./languageImages/love2d.svg?raw"
-import markdown from "./languageImages/markdown.svg?raw"
-import markdown_light from "./languageImages/markdown-light.svg?raw"
-import matlab from "./languageImages/matlab.svg?raw"
-import python from "./languageImages/python.svg?raw"
-import r from "./languageImages/r.svg?raw"
-import sql from "./languageImages/sql.svg?raw"
-import typescript from "./languageImages/typescript.svg?raw"
-import vba from "./languageImages/vba.svg?raw"
+import c from "./languageImages/c.svg?react"
+import cpp from "./languageImages/cpp.svg?react"
+import css from "./languageImages/css.svg?react"
+import go from "./languageImages/go.svg?react"
+import html from "./languageImages/html.svg?react"
+import java from "./languageImages/java.svg?react"
+import javascript from "./languageImages/javascript.svg?react"
+import latex from "./languageImages/latex.svg?react"
+import latex_light from "./languageImages/latex-light.svg?react"
+import lua from "./languageImages/lua.svg?react"
+import luau from "./languageImages/luau.svg?react"
+import love2d from "./languageImages/love2d.svg?react"
+import markdown from "./languageImages/markdown.svg?react"
+import markdown_light from "./languageImages/markdown-light.svg?react"
+import matlab from "./languageImages/matlab.svg?react"
+import python from "./languageImages/python.svg?react"
+import r from "./languageImages/r.svg?react"
+import sql from "./languageImages/sql.svg?react"
+import typescript from "./languageImages/typescript.svg?react"
+import vba from "./languageImages/vba.svg?react"
 
-import adobexd from "./techImages/adobexd.svg?raw"
-import audacity from "./techImages/audacity.svg?raw"
-import blender from "./techImages/blender.svg?raw"
-import canva from "./techImages/canva.svg?raw"
-import excel from "./techImages/excel.svg?raw"
-import git from "./techImages/git.svg?raw"
-import github from "./techImages/github.svg?raw"
-import github_light from "./techImages/github-light.svg?raw"
-import krita from "./techImages/krita.svg?raw"
-import mongodb from "./techImages/mongodb.svg?raw"
-import musescore from "./techImages/musescore.svg?raw"
-import nodejs from "./techImages/nodejs.svg?raw"
-import overleaf from "./techImages/overleaf.svg?raw"
-import paintdotnet from "./techImages/paintdotnet.svg?raw"
-import react from "./techImages/react.svg?raw"
-import roblox_studio from "./techImages/robloxstudio.svg?raw"
-import vercel from "./techImages/vercel.svg?raw"
-import vercel_light from "./techImages/vercel-light.svg?raw"
-import vite from "./techImages/vite.svg?raw"
-import vscode from "./techImages/vscode.svg?raw"
+import adobexd from "./techImages/adobexd.svg?react"
+import audacity from "./techImages/audacity.svg?react"
+import aws from "./techImages/aws.svg?react"
+import blender from "./techImages/blender.svg?react"
+import canva from "./techImages/canva.svg?react"
+import docker from "./techImages/docker.svg?react"
+import docker_light from "./techImages/docker-light.svg?react"
+import excel from "./techImages/excel.svg?react"
+import git from "./techImages/git.svg?react"
+import github from "./techImages/github.svg?react"
+import github_light from "./techImages/github-light.svg?react"
+import krita from "./techImages/krita.svg?react"
+import mongodb from "./techImages/mongodb.svg?react"
+import musescore from "./techImages/musescore.svg?react"
+import nodejs from "./techImages/nodejs.svg?react"
+import overleaf from "./techImages/overleaf.svg?react"
+import paintdotnet from "./techImages/paintdotnet.svg?react"
+import react from "./techImages/react.svg?react"
+import redis from "./techImages/redis.svg?react"
+import roblox_studio from "./techImages/robloxstudio.svg?react"
+import vercel from "./techImages/vercel.svg?react"
+import vercel_light from "./techImages/vercel-light.svg?react"
+import vite from "./techImages/vite.svg?react"
+import vscode from "./techImages/vscode.svg?react"
 
 const skillCategories: { title: string, items: SkillCardProps[] }[] = [
   {
     title: "Programming Languages",
     items: [
       { svg: c, label: "C" },
+      { svg: cpp, label: "C++" },
+      { svg: go, label: "Go" },
       { svg: java, label: "Java" },
       { svg: javascript, label: "JavaScript", isExperienced: true },
       { svg: lua, label: "Lua", isExperienced: true },
@@ -63,8 +71,8 @@ const skillCategories: { title: string, items: SkillCardProps[] }[] = [
   {
     title: "Web Development",
     items: [
-      { svg: css_icon, label: "CSS", isExperienced: true },
-      { svg: html_icon, label: "HTML", isExperienced: true },
+      { svg: css, label: "CSS", isExperienced: true },
+      { svg: html, label: "HTML", isExperienced: true },
       { svg: nodejs, label: "Node.js", isExperienced: true },
       { svg: vercel, svg_light: vercel_light, label: "Vercel" },
       { svg: vite, label: "Vite" },
@@ -74,14 +82,17 @@ const skillCategories: { title: string, items: SkillCardProps[] }[] = [
   {
     title: "Development Tools",
     items: [
+      { svg: aws, label: "AWS"},
+      { svg: docker, svg_light: docker_light, label: "Docker" },
       { svg: excel, label: "Excel" },
       { svg: git, label: "Git", isExperienced: true },
-      { svg: github, svg_light: github_light, label: "Github", isExperienced: true  },
+      { svg: github, svg_light: github_light, label: "Github", isExperienced: true },
       { svg: latex, svg_light: latex_light, label: "LaTeX" },
       { svg: markdown, svg_light: markdown_light, label: "Markdown", isExperienced: true },
       { svg: mongodb, label: "mongoDB" },
       { svg: overleaf, label: "Overleaf" },
       { svg: react, label: "React", isExperienced: true },
+      { svg: redis, label: "Redis"},
       { svg: roblox_studio, label: "Roblox Studio", isExperienced: true },
     ],
   },

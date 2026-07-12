@@ -11,7 +11,7 @@ const ScrollTip = () => {
       containerRef.current.style.animation = "none"
       containerRef.current.offsetHeight
       containerRef.current.style.animationDelay = "0.5"
-      containerRef.current.style.animation = "scrollTipFadeOut 0.8s ease-in-out forwards";
+      containerRef.current.style.animation = "scrollTipFadeOut 0.3s ease-in-out forwards";
     };
     const scrollTarget = containerRef.current?.parentElement?.parentElement ?? window
 

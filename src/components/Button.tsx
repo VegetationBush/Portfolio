@@ -7,7 +7,7 @@ type ButtonSize = "small" | "medium" | "large";
 interface CustomButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   size?: ButtonSize;
   label?: string;
-  svg?: string;
+  svg?: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   collapsible?: boolean;
   onClick?: () => void;
 }
