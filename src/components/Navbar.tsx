@@ -57,7 +57,7 @@ const Navbar = () => {
         <Button
           label = "Resume"
           svg = {file_icon}
-          onClick = {() => window.open(`/Resume_Non_Personal.pdf`, "_blank")}
+          onClick = {() => window.open(`/Hans_Yang_Resume.pdf`, "_blank")}
         />
       </div>
 

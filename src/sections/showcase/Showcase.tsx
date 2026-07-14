@@ -2,6 +2,7 @@ import ShowcaseItem from "./components/ShowcaseItem";
 import type { ShowcaseItemProps } from "./components/ShowcaseItem";
 
 import persplexive from "./images/Persplexive.png"
+import plusOneMagic from "./images/+1MagicEvo.png"
 import bloxroyale from "./images/BloxRoyale.png"
 import sysbreak from "./images/sys.break().png"
 import fps from "./images/fps.png"
@@ -10,6 +11,20 @@ import visulie from "./images/visulie.png"
 import musescore from "./images/musescore.png"
 
 const showcaseItems: ShowcaseItemProps[] = [
+  {
+    title: "+1 Magic Evolution",
+    subtitle: "One-of-a-kind Animation Suite",
+    description:
+      `An incremental game with a roguelite twist. Players gain magic power to fight stronger and stronger
+      enemies, unlocking dungeons to fight difficult bosses and get valuable rewards. Supported the production
+      of both backend and frontend systems, such as boss AI, animations, and user interface, delivering 
+      updates that engage players of all demographics and skill levels.`,
+    image: plusOneMagic,
+    tags: ["Luau", "Roblox Studio"],
+    highlights: ["10k+ Peak CCU", "1M+ Favourites", "27M+ Visits"],
+    caption: "2026",
+    link: "https://www.roblox.com/games/116223724643557/1-Magic-Evolution",
+  },
   {
     title: "Visulie",
     subtitle: "One-of-a-kind Animation Suite",
