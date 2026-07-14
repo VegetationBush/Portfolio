@@ -13,7 +13,7 @@ import musescore from "./images/musescore.png"
 const showcaseItems: ShowcaseItemProps[] = [
   {
     title: "+1 Magic Evolution",
-    subtitle: "One-of-a-kind Animation Suite",
+    subtitle: "Engaging Magic Mastery",
     description:
       `An incremental game with a roguelite twist. Players gain magic power to fight stronger and stronger
       enemies, unlocking dungeons to fight difficult bosses and get valuable rewards. Supported the production

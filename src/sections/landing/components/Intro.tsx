@@ -19,7 +19,7 @@ const Intro = () => {
         flexDirection: "column",
         alignItems: "center",
       }}>
-        <div
+        <h1
           className = "intro-title"
           style = {{
             fontWeight: 600,
@@ -33,7 +33,7 @@ const Intro = () => {
           }}
         >
           Hi, I'm Hans.
-        </div>
+        </h1>
         <div
           className = "intro-subtitle"
           style = {{
