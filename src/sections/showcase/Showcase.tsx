@@ -21,7 +21,7 @@ const showcaseItems: ShowcaseItemProps[] = [
       updates that engage players of all demographics and skill levels.`,
     image: plusOneMagic,
     tags: ["Luau", "Roblox Studio"],
-    highlights: ["10k+ Peak CCU", "1M+ Favourites", "27M+ Visits"],
+    highlights: ["40k+ Peak CCU", "1M+ Favourites", "30M+ Visits"],
     caption: "2026",
     link: "https://www.roblox.com/games/116223724643557/1-Magic-Evolution",
   },
