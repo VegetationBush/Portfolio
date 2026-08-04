@@ -2,12 +2,13 @@ import ShowcaseItem from "./components/ShowcaseItem";
 import type { ShowcaseItemProps } from "./components/ShowcaseItem";
 
 import persplexive from "./images/Persplexive.png"
-import plusOneMagic from "./images/+1MagicEvo.png"
+import plusonemagic from "./images/+1MagicEvo.png"
 import bloxroyale from "./images/BloxRoyale.png"
 import sysbreak from "./images/sys.break().png"
 import fps from "./images/fps.png"
 import pocketrift from "./images/pocketrift.png"
 import visulie from "./images/visulie.png"
+import aistudytool from "./images/AIStudyTool.png"
 import musescore from "./images/musescore.png"
 
 const showcaseItems: ShowcaseItemProps[] = [
@@ -19,7 +20,7 @@ const showcaseItems: ShowcaseItemProps[] = [
       enemies, unlocking dungeons to fight difficult bosses and get valuable rewards. Supported the production
       of both backend and frontend systems, such as boss AI, animations, and user interface, delivering 
       updates that engage players of all demographics and skill levels.`,
-    image: plusOneMagic,
+    image: plusonemagic,
     tags: ["Luau", "Roblox Studio"],
     highlights: ["40k+ Peak CCU", "1M+ Favourites", "30M+ Visits"],
     caption: "2026",
@@ -37,6 +38,18 @@ const showcaseItems: ShowcaseItemProps[] = [
     highlights: ["150+ Sales", "$1500+ CAD Revenue", "#1 Ranked Google Search"],
     caption: "2021 - Present",
     link: "https://devforum.roblox.com/t/3582453",
+  },
+  {
+    title: "AI Study Tool",
+    subtitle: "One-of-a-kind Animation Suite",
+    description:
+      `An AI-powered document processing application that transforms uploaded files into structured study
+      elements. Uses a serverless backend and generative AI to analyze and create defined schemas, of which
+      is displayed to the user using interactive, relevant graphics.`,
+    image: aistudytool,
+    tags: ["Fullstack", "Go", "AWS SAM", "AWS Lambda", "Typecript", "Vite", "React", "Docker"],
+    caption: "2021 - Present",
+    link: "https://hans-yang-aistudytool.vercel.app/",
   },
   {
     title: "FPS",
