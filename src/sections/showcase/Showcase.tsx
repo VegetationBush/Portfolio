@@ -48,7 +48,7 @@ const showcaseItems: ShowcaseItemProps[] = [
       is displayed to the user using interactive, relevant graphics.`,
     image: aistudytool,
     tags: ["Fullstack", "Go", "AWS SAM", "AWS Lambda", "Typecript", "Vite", "React", "Docker"],
-    caption: "2021 - Present",
+    caption: "2026",
     link: "https://hans-yang-aistudytool.vercel.app/",
   },
   {
